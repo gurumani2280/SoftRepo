@@ -1,0 +1,244 @@
+		System.out.println("main begin");
+		int i;
+		for(i = 1; i <= 50; i += 5)
+		{
+			System.out.println("loop:" + i);
+		}
+		System.out.println("main end:" + i);
+
+
+
+		System.out.println("main begin");
+		int i = 100;
+		for(; i <= 50; i += 5)
+		{
+			System.out.println("loop:" + i);
+		}
+		System.out.println("main end:" + i);
+
+
+
+
+		System.out.println("main begin");
+		int i = 1;
+		for( ; i <= 10; )
+		{
+			System.out.println("loop:" + i++);
+		}
+		System.out.println("main end:" + i);
+
+
+
+
+		System.out.println("main begin");
+		int i = 1;
+		for( ; ; )
+		{
+			System.out.println("loop:" + i++);
+		}
+		//System.out.println("main end:" + i);
+
+
+
+		System.out.println("main begin");
+		//int i;
+		for(int i = 1; i <= 5; i++)//;
+		System.out.println("loop:" + i++);
+		//System.out.println("main end:" + i);
+
+
+		System.out.println("main begin");
+		for(int i = 1, j = 10; i <= 5 && j >= 8; i++, j--)
+		{
+			System.out.println("loop:" + i + ", " + j);
+		}
+		System.out.println("main end:");
+
+
+
+		System.out.println("main begin");
+		int i;
+		for(i = 1, System.out.println("init:" + i);  
+			i <= 5; 
+			i++, System.out.println("change:" + i))
+		{
+			System.out.println("loop:" + i);
+		}
+		System.out.println("main end:" + i);
+
+
+
+		System.out.println("main begin");
+		for(int i = 1; i <= 10; i++)
+		{
+			System.out.println("loop begin:" + i);
+			if(i >= 5)
+			{
+				System.out.println("from if:" + i);
+				continue;//break//
+			}
+			System.out.println("loop end:" + i);
+		}
+		System.out.println("main end");
+
+
+  
+		System.out.println("main begin");
+		for(int i = 1; i <= 5; i++)
+		{
+			System.out.println("loop1 begin:" + i);
+			for(int j = 1; j <= 3; j++)
+			{
+				System.out.println("loop2:" + i + "," + j);
+			}
+			System.out.println("loop1 end:" + i);
+		}
+		System.out.println("main end");
+
+========---------------==================---------------===============
+
+while do while---
+
+		System.out.println("main begin");
+		int i = 0;
+		while(i < 5)
+		{
+			System.out.println("while body:" + i);
+			i++;
+		}
+		System.out.println("main end:" + i);
+
+
+		System.out.println("main begin");
+		int i = 100;
+		while(i > 5)
+		{
+			System.out.println("while body:" + i);
+			if(i < 50)
+			{
+				continue; //break
+			}
+			i -= 10;
+		}
+		System.out.println("main end:" + i);
+
+
+
+		System.out.println("main begin");
+		int i = 10;
+		while(i++ < 20)//;
+		System.out.println("loop:" + i);
+		i++;
+		System.out.println("main end:" + i);
+
+
+
+		System.out.println("main begin");
+		int i = 0;
+		do
+		{
+			System.out.println("from do-while body");
+			i++;
+		}
+		while(i < 5);
+		System.out.println("main end:");
+
+
+
+		System.out.println("main begin");
+		int i = 0;
+		do
+		{
+			System.out.println("from do-while body");
+			i++;
+		}
+		while(i < 5);
+		System.out.println("main end:");
+
+======----------============-------------===========----------=========
+System.out.println("main begin");
+		int i = 5;
+		switch (i)   
+		{
+			case 3:
+				System.out.println("case 3");
+			case 5:
+				System.out.println("case 5");
+				break;
+			case 10:
+				System.out.println("case 10");
+			default:
+				System.out.println("from default");
+		}
+		System.out.println("main end");
+
+
+		System.out.println("main begin");
+		short i = 6;
+		switch (i)  
+		{
+			case 32769:
+				System.out.println("case1");
+				break;
+			case 130:
+				System.out.println("case130");
+				break;
+			case 5:
+				System.out.println("case5");
+				break;
+		}
+		System.out.println("main end");
+
+
+
+		System.out.println("main begin");
+		char c1 = 'e';
+		switch (c1)   
+		{
+			case 'w':
+				System.out.println("case w");
+				break;
+			case 'p':
+				System.out.println("case p");
+				break;
+			case 'e':
+				System.out.println("case e");
+				break;
+		}
+		System.out.println("main end");
+
+
+
+		System.out.println("main begin");
+		String s1 = "hello";
+		switch (s1)  
+		{
+			case "abc":
+				System.out.println("case abc");
+				break;
+			case "xyz":
+				System.out.println("case xyz");
+				break;
+			case "hello":
+				System.out.println("case hello");
+				break;
+		}
+		System.out.println("main end");
+
+
+
+
+		System.out.println("main begin");
+		switch (1000) 
+		{
+			case 200:
+				System.out.println("case 200");
+				break;
+			case 500:
+				System.out.println("case 500");
+				break;
+			case 1000:
+				System.out.println("case 1000");
+				break;
+		}
+		System.out.println("main end");

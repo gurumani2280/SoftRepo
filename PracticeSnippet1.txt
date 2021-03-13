@@ -1,0 +1,165 @@
+int i = 10;
+int j = i++; 
+System.out.println(i);
+System.out.println(j);
+
+
+int i = 10;
+int j = ++i;
+System.out.println(i);
+System.out.println(j);
+
+===-------==========--------
+int i = 10;
+int j = i++  +  i   +  i++  +  i;
+System.out.println(i);
+System.out.println(j);
+
+
+int x = 5;
+int y = x--  +   x--   +   x--  +   x--  +  x;
+System.out.println(x);
+System.out.println(y);
+======---------===========
+int i = 5;
+int j = ++i  +  i;
+System.out.println(i);
+System.out.println(j);
+
+int i = 5;
+int j = --i  +  --i  +  i;
+System.out.println(i);
+System.out.println(j);
+===========================
+
+int i = 5;
+int j = i--  +   i--  +   --i  +   i--  +  --i  +  i--;
+System.out.println(i);
+System.out.println(j);
+
+============-------------=============---------------
+
+System.out.println("main begin");
+int i = 10;
+if(i == 10)
+{
+	System.out.println("from if");
+	System.out.println("from if");
+}
+System.out.println("main end:" + i);
+
+
+System.out.println("main begin");
+int i = 10;
+if(i = 10)
+{
+	System.out.println("from if");
+	System.out.println("from if");
+}
+System.out.println("main end:" + i);
+
+============-------------=============---------------
+
+System.out.println("main begin");
+int i = 10;
+if(i++ == 10)
+{
+	System.out.println("from if");
+	System.out.println("from if");
+	i++;
+}
+System.out.println("main end:" + i);
+
+
+System.out.println("main begin");
+int i = 10;
+if(i++ == 11)
+{
+	System.out.println("from if");
+	System.out.println("from if");
+	i++;
+}
+System.out.println("main end:" + i);
+
+
+System.out.println("main begin");
+int i = 10;
+if(++i == 11)
+{
+	System.out.println("from if");
+	System.out.println("from if");
+	i++;
+}
+System.out.println("main end:" + i);
+
+
+============-------------=============---------------
+
+
+System.out.println("main begin");
+boolean b1 = false, b2 = true;
+if(b1 || b2)
+{
+	System.out.println("from if");
+	System.out.println("from if");
+}
+System.out.println("main end:");
+
+
+
+System.out.println("main begin");
+boolean b1 = false, b2 = false;
+if(b1 && b2)
+{
+	System.out.println("from if");
+	System.out.println("from if");
+}
+System.out.println("main end:");
+
+============-------------=============---------------
+
+
+System.out.println("main begin");
+int i = 0;
+if(i++ == 0  ||  i++ == 1)
+{
+	System.out.println("from if");
+	System.out.println("from if");
+	i++;
+}
+System.out.println("main end:" + i);
+
+
+System.out.println("main begin");
+int i = 0;
+if(i++ == 1  ||  i++ == 1)
+{
+	System.out.println("from if");
+	System.out.println("from if");
+	i++;
+}
+System.out.println("main end:" + i);
+
+
+System.out.println("main begin");
+int i = 0;
+if(i++ == 1  &&  i++ == 2)
+{
+	System.out.println("from if");
+	System.out.println("from if");
+	i++;
+}
+System.out.println("main end:" + i);
+
+
+
+System.out.println("main begin");
+int i = 0;
+if(i++ == 0  &&  i++ == 2)
+{
+	System.out.println("from if");
+	System.out.println("from if");
+	i++;
+}
+System.out.println("main end:" + i);
+======================================
