@@ -1,0 +1,58 @@
+what are methods?
+
+methods are nothing but a block of statement or set of statement 
+which will be executed whenever it is called or invoked
+
+why method?
+we design method for re-usablity
+
+general syntax for method- 
+
+accessLevel accessModifier returnType methodName(arguements) {
+}
+
+accessLevel -- public , protected, private or default 
+
+accessModifier -- static or non-static
+
+returnType -- can be any dataType (any of 8 primitive or non primitive) or void
+	returnType specifies what type of output method returns after processing
+	if method does not return anything then returnType for the method should be void
+	for non void method return statement is mandatory (return statement optional for void method)
+	returnType and return value type should match
+
+
+methodName -- can be any valid identifier we can give for the method
+
+
+arguments are not mandatory -- these are inputs to the method
+	e.g.	if a method wants to add two number then the method should be capable of recieving two number as input
+
+method example
+
+	public static void greeting()
+	{
+		System.out.println("Hello from greeting");
+		// return;
+	}
+
+	public static void checkEvenOdd(int i)
+	{
+		if(i % 2 == 0)
+		{
+			System.out.println("the given number "+ i + " is EVEN");
+		}
+		else
+		{
+			System.out.println("the given number "+ i + " is ODD");
+		}
+		// return;
+	}
+
+	public static int add(int i, int j)
+	{
+		int sum = i + j;
+		return sum;
+	}
+
+
