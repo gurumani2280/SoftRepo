@@ -1,0 +1,57 @@
+class is nothing but collection of fields and behavior.
+fields - variable (global), attibutes, data-member
+behaviour - methods, member-function,
+
+whatever we write inside the class definition block are members of a class
+
+there are two types of members of class
+- static members
+- non - static members
+
+static members are those members which are declared with keyword static,
+
+static members include - static variables, static methods, static block or static initialization block (Sib)  
+
+static members can be accessed using className.memberName or className.memberName()
+A.test()
+because static members will be loaded into static pool and name of static pool will be className
+class Loader will create static pool only once in an execution cycle
+static members will have only one copy 
+
+
+
+Non- static members are those members which are not declared using keyword static
+
+Non-static members include - non-static variables, non-static methods, constructor, non-static block or instance initialization block (iib)
+
+to access non static members we should create object of the class, or instance of the class 
+or in other words to access non static members we should instantiate the class
+
+ClassName referenceVariable = new ClassName();
+
+here new is an operator, and its operation is to create new address space (or object) in the heap memory randomly
+the className() will load all the non static members of the specific class into the new address space created by new operator
+
+referenceVariable will store the object address
+	e.g A rv = new A();
+	rv.member
+	rv.test();
+
+Object is an entity which will have its own states and behaviour
+
+Non-static members can have multiple copies as we can create multipe object for a class
+
+
+whenever we need a single copy we go for static -- like companyName, schoolName
+
+write differences between static and non static
+						Static Vs Non-Static
+1. how to create static and non static  ----
+2. how to access them
+3. number of copies
+4. when to go for static and nonstatic
+
+
+if we need multiple copies we go for non static - like empoyeeId, studentId
+
+
