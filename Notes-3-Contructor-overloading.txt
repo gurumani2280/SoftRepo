@@ -1,0 +1,138 @@
+Constructor
+========
+
+observe difference between constructor and method.
+
+constructor is an special method which is used to construct/create an object
+
+constructor will have same name as className
+constructor will never have any returnType
+constructor will always be non static 
+
+constructor will be called/invoked/executed whenever an object is created 
+using new operator
+
+Every class will have at least one constructor
+default constructor by compiler
+
+No default constructor for user defined constructor
+
+why create constructor if there is default constructor?
+
+constructor will always be non static hence it is also called as 
+non static intializer which is used to initialize the object
+
+constructor overloading
+creating multiple constructor for a class with variation in arguements
+	variation in arguments can be achieved in 3 ways
+		1. changing the number of arguments
+		2. changing the data type of the arguments
+		3. changing the position of the arguments
+
+advantages of constructor overloading
+	we get multiple options to create the object for a class
+	
+
+
+this() calling statement 
+==========----------============-------------=========
+
+=============--------------================-------------===========
+
+Method Overloading
+what?
+developing multiple method having same name by changing the argument list
+is called a method overloading
+
+changing the argument list means
+1) changing the number of the arguments
+2) changing the data type of the arguments
+3) changing the position of the argument
+
+why?
+when comman task to be performed with difference in combination of
+arguments/input then we should go for method overloading
+
+eg 
+login(username, password)
+login(mobileNumber, password)
+
+train search
+
+search(PNR)
+search(trainNo, trainName)
+search(fromStation, toStation)
+
+
+
+
+========-----------======----------=
+we can overload both static and non static methods
+
+if the method names are same , then there should be some variation in 
+the argument and there is no restrictions
+on other parts of the method signature
+
+while overloading method return type can be anything void, int etc
+
+can overload a static and non static method
+
+Q. can we overload main method?
+
+yes, like any other method main method can also be overloaded.
+BUt the program execution will start from main method which is 
+having arument of (String[] args) -- public static void main(String[] args)
+other version of main method should be called/invoked explicitly
+
+
+advantages of Overloading
+----========-------------=
+1. we can achieve consistency in method names which are designed 
+for commman purpose
+2. we can achieve efficiency in program readablity
+3. we can remeber method names easily
+4. we can achive compile time polymorphism  **
+
+examples
+Area -- Addition, Facebook login, fetch train details
+Sopln()
+
+in selenium
+switchToFrame()
+assertEquals()
+
+=======---------------===========---------=====
+
+Java File and multiple classes
+
+In One Java file we can develop multiple classes.
+In class in which we develop business logics is called as Business class.
+In main class we will write the main method.
+
+If there is multiple classes in a java file, then file name should be main class.
+
+whenever we compiling any java file which is assosiated with multiple classes then
+as result of compilation, multiple dot class file will be generated based on class
+name.
+
+class Student
+{
+}
+
+class A
+{
+}
+
+If you want to acccess the static members of the other class then we should use
+that (the other )className.  className.staticMember
+
+if you want to access Non static member of the other class then we should create 
+the object of that class.
+
+Multiple static pools will be created based on the className after running java 
+program which is assosiated with multiple classes
+
+all the static members of the each class will be loaded on to 
+their respective static pool
+
+can we develop multiple main method in one java file?
