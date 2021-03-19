@@ -1,0 +1,141 @@
+Principle of object oriented programming.
+
+Object is an instance of class which has its own states and behaviour.
+
+any object oriented programming language will have four principle
+1. Inheritance
+2. Polymorphism
+3. Encapsulation
+4. Abstraction
+
+Inheritance is one of the principle of Object oriented programming language
+which represent is Is-A relationship
+
+Inheritance means acquiring the features or properties of one clas into another
+(w.r.t classes)
+
+The class from which we are getting properties is called as parent class or
+base class or super class
+
+the class which acquires the features is called as child class or
+derieved class or sub class
+
+to represent inheritance between classes we use keyword extends
+
+Through inheritance we can achieve
+extensibility
+code reusability
+code maintainablity
+code optimization
+
+order of loading of non static members in case of sub class object creation
+
+
+super() calling statement
+
+super() calling statement is used to call immediate super class constructor
+in case of inheritance.
+
+super() calling statement will call immmediate super class constructor.
+
+through super() calling statement we can achieve contructor chaining
+
+subclass constructor calling its immediate super class constructor is called 
+as contructor chaining
+
+if there is inheritance between classes then constructor chaining is a must
+
+
+if there is inheritance between classes, and if the programmer has not developed
+super() calling statement inside a constructor then compiler will develop a default
+super() calling statement -- no args super() calling statement
+
+default constructor with super() calling statement
+
+Super(parameter) will call the super class contructor with matching 
+parameter
+
+eg super(90) will call the super class integer constructor
+
+Rules of super
+first statement
+maximum one 
+
+we cannot develop both this() and super() inside the same constructor
+why?
+
+similarities between super() and this() calling statement
+
+differences between this() and super() calling statement
+
+
+====----========
+types of inheritance
+1. single level -- one sub class -- one super class 
+2. Multilevel -- one sub class inheriting from another sub class
+3. hybrid -- more than one sub class having same super class
+4. Multiple -- one subclass having multiple immediate super class
+
+In java multiple inheritance is not possible through class.
+through interface we can achieve multiple inheritance in java.
+
+=--===--===
+
+Object class
+
+super most class in java
+non static methods -- toString(), hashCode(), equals()
+any class in java is a sub class to Object class in java
+any object created in java will have these non static members of Object class
+
+why no multiple inheritance through classes in java?
+
+Multiple inheritance means one sub class having multiple immediate super class
+if there is inheritance betwee class , then constuctor chaining is a must
+and super() calling statement should be first statement inside the constructor
+for two immediate super class, to maintain the contructor chaining, there should 
+be two super calling statement, which against the rule of java
+
+diamond path issue
+
+=============--------------============
+Method overriding
+
+changing the implementation of super class method in the sub class 
+based on the need of the sub class
+is known as method overriding
+
+through method overriding , we can achieve polymorphism (run time polymorphism)
+
+to achieve method overriding 3 things are mandatory
+1. Inheritance
+2. Non static method (part of object)
+3. method Signature should be exactly same
+
+
+when we perform method overridding, the super class implementation of the method 
+will be lost in the sub class, i.e. we will get the latest implemetation
+
+we can define method overridding as redefining the super class method in the
+sub class according to the needs of the sub class is called as Method overridding.
+
+==---=== 
+super keyword
+
+super keyword is used to access the immediate super class Non static members in 
+case of inheritance
+
+effective usage of super keyword is in case of method overriding
+
+Due to method overriding, super class implementation of that method will be 
+masked with the sub class implementation.
+
+to get the masked implemenation , we can use the super keyword
+
+=======-----------========
+Final Variable
+
+Final method
+
+
+Final class
