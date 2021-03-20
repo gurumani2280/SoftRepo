@@ -1,0 +1,15 @@
+========--------Array logical coding======------
+1. Find the sum of all given elements from an int array?
+2. Find the min element from the given int array?
+3. Find the max element from the given int array?
+4. Find the 2nd min element from the given int array?
+5. Find the 2nd max element from the given int array?
+6. Find the average value of an int array?
+7. Read all elements from an array in the reverse order?
+7a. Read first half of the elements in the reverse direction from an array?
+7b. Read second half of the elements in the reverse direction from an array?
+8. Read only even indexed elements from an array?
+8a. Find out the sum of all even indexed elements from a given int array?
+8b. Find out the sum of all odd indexed elements from a given int array?
+9. Read only odd indexed elements from an array in the reverse order?
+10. Find out an index of a specified element from a given array?
