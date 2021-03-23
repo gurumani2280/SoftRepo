@@ -1,0 +1,56 @@
+Class
+Object -- object is an entity which will have its own states and behaviour 
+----
+There are two categories of variable
+1. Local
+2. Global
+
+Local Variables are those variables which are declared or 
+created inside a method or a block.
+
+Local variable scope is only inside the method or 
+block in which it is developed or created.
+
+we cannot categories local variable into static or non static.
+
+Global variable are those variables which are declared outside of any method
+or  a block but within the class.
+
+Global variable can be accessed from all parts of the class.
+
+Global Variable can be categorized into static or non static.
+
+Static variable are also called as Class Variables.
+Non - static variables are also called as instance variable.
+
+====================-------================
+Method arguments will always be local variable
+
+Local variable is created on stack when the method/block is loaded.
+
+Once method execution is over, local variable is erased along with 
+method/stack control return to caller/main
+
+============----------
+Before using any variable, it should have some value -- initialization
+
+If we do not initialize global variable (static or non static), then
+global variable will be storing default values depending on data type
+
+for local variable there will not be any default values if not initialized.
+
+========final variable -- constant ===
+what is final ?
+final is keyword
+
+If you want declare constant a constant variable in java
+then we will declare with keyword final
+
+final variable value cannot be changed or overridden
+
+both local and global variable can be final.
+
+ global final variable should be initialized at the time of declaration
+ local final variable can be declared and intialized  later (only once)
+
+=============--------------================-------------===========

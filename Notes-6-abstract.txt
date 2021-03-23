@@ -1,0 +1,52 @@
+general syntax for method
+	accessLevel accessModifier returnType methodName(arguments )
+	{
+	}
+any method has two parts 
+method declaration or method signature ---   accessLevel accessModifier returnType methodName(arguments )
+method body or method implementation or method definition  -- between the curly braces
+
+There are two kinds of methods
+1. concreate method or complete method
+2. abstract method or incomplete method
+
+the method which have both declaration and defination together is called as complete or conreate method
+
+the class in which we can only develop or create complete methods is called as complete or concreate class
+
+Abstract Method - the method which will have just declaration without any defination is called abstract method
+abstract method should be declared with keyword abstract
+
+Abstract class - the class in which we have option to created abstract method is known as abstract class or incomplete class
+abstract class should be declared with keyword abstract
+
+Rules for Abstract class
+1. we cannot create object of abstract class
+in other words abstract class cannot be instanciated
+2. In Abstract class we can develop 
+	i> only abstract methods
+	ii> only complete methods
+	iii> (both) combination of abstract and concreate methods
+3. Abstract class should have a subclass and that subclass should implement all inherited abstract method
+	otherwise that abstract class also should be abstract
+
+Q.will abstract class have constructor? if yes then when it gets executed since we cannot create object to Abstract class?
+	yes like any other class in java abstract class will have contructor 
+
+Q. can we declare abstract method as static
+	No, 
+	abstract method should be overridden in subclass, but static method cannot be overridden 
+
+Q. can we declare abstract methood as final
+	No,
+
+Q can we declare abstract class as final
+	No,
+
+Advantages of abstract class
+1. abstract class is not 100 % abstract due to constructor
+2. through abstract class we can achieve abstraction till to 100% or(upto 100%)
+through abstract class we can achieve standarisation and abstraction (from 0 to 100%)
+
+Abstraction leads to standarisation and simplicity.
+
