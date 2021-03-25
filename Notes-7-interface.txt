@@ -1,0 +1,41 @@
+Interface is another java type in java through which we can achieve multiple inheritance in java
+
+Through interface we can achieve standarization and 100% abstraction
+
+Interface is 100% abstract
+
+Interface methods will be automatically abstract and public
+
+we cannot create object of Interface
+
+Interface should have a subclass and that sub class should override all the abstract method
+	if the subclass does not override all the abstract method then the subclass should be declared as abstract
+
+If a class is inheriting from interface then to represent inheritance we should use keyword implements
+if an interface is inheriting from another interface then we should used extends keyword
+
+Interface does not have constructor.
+Interface does not inherit from Object class (supermost class in Java)
+
+Interface can have variable -- all variable in interface will be public , static and final 
+Interface variable just cannot be declared , it has to be initialized while declaring (as it is global static final variable) 
+
+interface can have static method. But the static method will not be inherited to sub class or sub interface
+
+assignment -- 
+write all the possible differences between abstract class and interface
+
+Enum - if we have to group the fixed number of constants we will be using Enum or Enumeration
+	e.g - days in a week, Months in a year, keys on keyboard (Keys enum in selenium)]
+	enum A {
+		const1, const2;
+	}
+	through enum we can achieve uniformity among developers
+Annotation - annotations are basically used to give some information to the programmer, Compile time evironment 
+	and run time environment
+	eg @Override, @SuppressWarning
+	@Test @BeforeMethod
+
+	@interface A {
+	}
+
