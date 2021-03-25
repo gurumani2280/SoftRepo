@@ -1,0 +1,59 @@
+casting :: -- casting means conversion
+
+type casting :: conveting data /object from one  type to another.
+
+casting is of two types primitive casting and object casting
+------========---------------
+1.primitive casting :-
+	converting from one primitive data to another data type.
+	It is again of two type
+
+	1. widening (auto/implicit widening) or (explicit widening)
+	converting the primitive data from lower type to anyone of the higher type.
+
+	auto/implicit widening --- compiler performing widening operation automatically at compile time
+	  double d = 10;
+
+	explicit widening -- programmer performing widening operation while developing code.
+	  double d = (int)10;
+
+	 ---  ----  ---> ---- >  --- >widening---  ----  ---> ---- >  --- >
+
+	byte --> short --> int --> long --> float --> double 
+
+	---  <----  ---< ---- <  --- < narrowing ---  <----  ---< ---- <  --- 
+
+	2. narrowing (explicit widening)
+
+	converting the primitive data from higher type to anyone of the lower type.
+
+	Narrowing is not automatic.
+	programmer should perform narrowing while developing code.
+	int a  = 0.5; // CTE
+	int a  = (int)0.5;
+	 
+2. Object casting
+	converting object of one class type to another type.
+	to perform object casting inheritance is Mandatory.
+
+	converting object from subclass type to super class type  or super class to subclass type
+	
+	Object casting is of two types
+
+	1. Upcasting (auto/implicit) or (explicit)
+		1. sub class feature will be hidden -- cannot acces them
+		2. only can access super class member , 
+		3. In case of upcasting we can access overridden methods but will get latest implementation
+	
+explain   WebDriver driver = new ChromeDriver();  /// auto or implicit upcasting
+	WebDriver is super interface
+	driver is reference variable
+	new is an operator
+	ChromeDriver is sub class to webdriver interface
+
+	once we have achieved upcasting we can achieve polymorphism
+
+	2. DownCasting (explicit only -- no automatic / implicitly)
+		1. direct downcasting not allowed --- gives run time error -- ClassCastException
+		2. can only downcast -- the upcasted object -- 
+		   so the hidden feature of subclass(due to upcasting) can be accessed 
