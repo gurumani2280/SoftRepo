@@ -1,0 +1,73 @@
+Polymorphism :--
+
+means Many forms
+
+application behaving differently at different stages of the application
+
+change in the object behaviour in different stages of the application development
+
+in simple terms --- same line of code behaving differently at different stages of the application
+
+condition to achieved polymorphism:-
+	1. Inheritance
+	2. Method overridding
+	3. Upcasting
+Example
+
+
+--
+
+task -- >
+/* 
+ 1.Create Interface Animal --- having abstract method sound() which is implemented by various animal sub Classes 
+ 2.create an array of the Animal interface type, in the array store the objects of all Animal subclassed
+ Animal[] arr ={new Cat(), new Dog(),new Elephant(), new Lion()}
+ 
+ 3.iterate through the array using For loop in main class
+and inside for loop call the sound () of the Animal
+ for(int i = 0; i <arr.length; i ++)
+	{
+		 arr[i].sound();
+	}
+
+ */
+
+1. Run Time Polymorphism  --- 
+2 . Compile time polymorphism. (Through Method overloading) 
+
+	 based on methdo binding binding -- before method executes on stack , binding should happen
+	 method binding -- resolution / resolving which method will be called/invoke
+
+	 in case of method overloading complier can figure out which method will be called at the compile time itself
+
+	 in case of Runtime polymorphism , compiler can not  predict which method will be called ,
+	 as objects will be created at runtime
+
+
+                                                   
+
+Abstraction :- 
+
+Hiding the complexity/implementation from the user and exposing the required functionality 
+
+Hiding the complexity--- and showing only required functionality.
+
+Abstraction can be achieved through interfaces(100%) or abstract class(upto 100%)
+
+while achieving abstraction all the common features will be grouped in an interface
+and underlying classes will override the same features based on requirement/variation
+
+
+Task --> 
+/*
+ Create Interface Shape with method draw() and area() , having subclasses like Circle, Rectangle, Triangle
+	Implement abstract methods of the interface in the subclasses
+	Create class MyDrawing -- having method, --- methods can be static or non static
+	Shape getShape(char ch) -- return shape type objects based on provided char and 
+	public void getDrawingAndArea(Shape shape) -- which call draw() and area() for the give Shape type 
+	
+	In main class and 
+	call the MyDrawing class methods bu passing different chars
+ */
+	
+

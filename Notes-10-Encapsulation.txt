@@ -1,0 +1,87 @@
+
+packages -- packages are nothing but the folders ---
+packages are used for keeping/separating similar kind of files.
+eg  pages/tests/config/util
+
+package com.pack1;
+
+package statement should used as the first line in the java file
+
+============---------==============--=====
+
+Access Levels /specifiers/ privileges
+-------------------------=====================--------------
+
+Acess levels are used to restrict on the access of the members of class
+through access levels we can achieve encasulation.
+
+
+There are four access levels:-
+1. public  -- public members will have application level access 
+              i.e. public members can be accessed from all parts of the application
+	      
+2. default -- default member will have package level access
+              i.e. default members can be accessed only within package in which it is developed
+
+	      --  The method test3() from the type A is not visible
+
+3. private  -- private member will have class level access 
+               i.e. private members can be accessed only within the class in which it is developed
+
+	       The field A.i is not visible
+
+	       private members will not be inherited.
+
+4. protected -- protected members will have package level access and with inheritance it can be accessed in other package
+
+			we have to use subclass object and within same subclass only.
+			protected members should be proected/accessed within subclass only.
+
+
+
+
+if you want to access the members of a class which is in other package , 
+we should first import that class by using import statement
+
+
+import statement should be developed after package statement
+
+
+access level allowed for class itself --- public or default
+
+public class can be imported to other packages .
+default class can not be imported to other packages .
+The type com.pack1.C is not visible
+
+Illegal modifier for the class X; only public, abstract & final are permitted
+
+
+POJO -- plain old java object --class having  data member and getter and setter
+bean class.
+
+
+Encapsulation :-
+
+Restricting the direct access to the data members and giving the indirect access to the data members
+through getters and setter methods
+
+
+here data members will be private and getter and setters methods will be public
+
+getter method will return the value of the private data members. -- also called as accessors
+
+setter  method will set  the value of the private data members. -- also called as mutators
+
+Through encapsulation , we will have complete control over the data which is getting manipulated.
+
+Through encapsulation , we can achieve security over data
+
+here the data and  code which operate on the data will be binded together in the same class
+
+e.g.  bank balance, email password.
+
+
+task --> enhance class BankAccount
+-- contructor --- 
+-- deposit() method
+-- withdraw() method --- 
