@@ -1,0 +1,56 @@
+Object class
+--==---==--
+
+Object is a built in class and it is the supermost class for any class in java.
+
+Object class is having lot of non static method, which will be inherited to every class in java
+
+
+methods in Object class
+
+these three methods are non final. their default behaviour is based on the object memory.
+in java we are more bothered about object state than its memory.
+So we override these methods in the classes to get the information about object content.
+content refers to attribute/variable state or value
+
+1. toString() -
+default behaviour -- returns string represetation of object memory -- 
+				Fully Qualified class name and hexadecimal representation of object memory
+				pack1.A@123E34
+	---whenever we print reference variable there is an implicit/(Automactic) call to  toString() method of that object
+	-- toString() method will be overriden to return the contents of the object in string format
+
+2. hashCode()  -- returns the unique integer number based on memory address of the object
+		-- the unique number is also called as hash number, it will be generate based on some hash algorithm
+		-- hashCode() will be overridden to return the some integer (hash number)  based on content of the object
+
+3. equals()  -- equals() method of Object class will compare two object equality based on the memory address
+	      - if memory address is same then true otherwise false.
+	      -- equals() method is overridden to compare two objects equality based on the content of the object.
+
+	      double equals operators (==) will always compare memory for reference variable
+	      for primitive variable , double equals operators (==) will compare value 
+
+
+
+4. notify()
+5. notifyAll()
+6. wait()
+
+these three will be used in Mutithreading
+
+7. getClass() -- will be used in reflection api
+8. clone() -- used for cloning
+9. finalize() -- used in garbage collection
+
+---------=============----------------==============-----------------===============---------------============---
+//taking user input
+Scanner sc = new Scanner(System.in);
+String name = sc.next();
+int i = sc.nextInt();
+
+// final array
+
+// Derived array
+
+// Enhanced for loop
