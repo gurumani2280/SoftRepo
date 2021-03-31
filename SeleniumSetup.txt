@@ -1,0 +1,99 @@
+Selenium project set up
+------------=======------------
+
+set  JAVA_HOME -- C:\DevSoft\JDK1.8
+echo %JAVA_HOME%
+
+1. download maven --- set the path and maven home
+
+https://maven.apache.org/download.cgi
+
+download and unzip the bin file -- 
+
+
+set M2_HOME  -  C:\software\apache-maven-3.5.0
+echo %M2_HOME%
+
+set/ update path till to bin folder -- C:\software\apache-maven-3.5.0\bin
+mvn -version
+
+
+
+2. create simple maven project
+
+3. add the dependency for selenium in pom.xml
+
+4. inside main method write 
+	WebDriver driver = new ChromeDriver()
+	run the code, observe the error/exception
+
+5. download chromeDriver exe for chrome, gecko  for firefox
+https://www.selenium.dev/downloads/#client-drivers  --- > expand browsers -- > click Documentation
+	set the path for the exe
+	System.setProperty("webdriver.gecko.driver", driverPath);
+
+	then run the code
+=====---------=========--------==========
+
+
+what is Automation?
+	Converting manual test cases into automation script.
+
+why automation? when we go for automation?
+	To overcome the drawbacks of manual testing, We go for automation. Manual testing requires
+		i) More man power -- more test cases
+		ii) More time --- more time to regression
+		iii) Human may tend to do mistakes as manual is monotonus.
+
+
+what is selenium?
+	Selenium automates browsers. That's it! 
+	Selenium is a set of tools and libraries which is used to automate browsers.
+
+What is webdriver?
+	WebDriver is an interface in which all the methods are invoked by the browser classes.
+
+selenium architecture and protocols?
+(How selenium works? and Which protocol is used by Selenium to interact/communicate with the browser?)
+	By calling the native methods of the browser.
+	JSON Wire Protocol (Java Script Object Notation)
+
+	Selenium supports multiple coding languages. 
+	Each language has its own binding which communicates with WebDriver API.
+	The WebDriver API performs the action on the browser by using browser specific drivers (Uses JSON Wire Protocol)
+
+
+selenium hierarchy?
+	SearchContext is super most interfaces which are extended by WebDriver interface.
+	Abstract methods of these two interfaces is implemented in Remote WebDriver class
+	and overridden in respective browser classes such as FirefoxDriver, ChromeDriver, InternetExplorerDriver, SafariDriver etc.
+
+
+language binding?
+
+launching browser
+basic browser handling
+handling browser navigation
+
+
+======----------===============---------------=========
+
+selenium architecture --   search in google and see the diagram
+
+
+There are four basic components of WebDriver Architecture:
+
+	1. Selenium Language Bindings
+	Selenium developers have built language bindings/Selenium Client Libraries in order to support multiple languages
+https://www.selenium.dev/downloads/#client-drivers
+
+	2. JSON Wire Protocol
+	JSON (JavaScript Object Notation) is an open standard for exchanging data on web.
+
+	3. Browser Drivers
+	Selenium uses drivers, specific to each browser in order to establish a secure connection with the browser without revealing the internal logic of browser's functionality.
+
+	4. Real Browsers
+
+	Browsers supported by Selenium WebDriver:
+   
