@@ -1,0 +1,51 @@
+launching chrome browser?
+launching firefox browser?
+
+opening google.com or facebook.com?
+
+what is WebDriver?
+
+maximizing browser?
+
+closing browser?
+
+getting page title?
+
+getting url?
+
+getting page source?
+
+identifiying element?
+
+list all locator in selenium?/or list eight methods of By class?
+
+what is WebElement?
+
+how to perform click() operation?
+
+how to enter any text to text field?
+
+
+general syntax xpath?--(relative xpath)
+//tagName[@attribute='attributeValue']				//tagName[text()='text']
+//tagName[contains(@attribute,'attributeValue')]		//tagName[contains(text(),'text')]
+e.g.
+
+//a
+//input
+//table
+//table/a
+//table//a
+
+general ccs syntax?
+e.g.  tagName[attribute='attributeValue']
+
+
+difference between findElement and findElements?
+1. return type       --
+2. single matching   --
+3. Multiple Matching --
+4. No Matching       --
+
+
+
