@@ -1,0 +1,95 @@
+<html>
+	<header>
+		<title>Basic Html Element</title>
+		<script>
+			function focusFirst()
+			{
+				document.forms[0].username.focus();
+			}
+		</script>
+	</header>
+	<body onload="focusFirst()">
+		<form name="loginform" method="post" action="WelcomePage.html">
+		<table border="1">
+		 	
+		 	<tr>
+				<td>User Name :</td>
+				<td><input type="text" name="username" placeholder="username"/></td>
+			</tr>
+		 	<tr>
+				<td>Password :</td>
+				<td><input type="password" name="password" placeholder="password"/></td>
+			</tr>
+			<tr>
+				<td>First Name : </td>
+				<td><input id="firstname" type="text" name="firstName" disabled="true"/></td>
+			</tr>
+			<tr>
+				<td>Last Name :</td>
+				<td><input id="lastname" type="text" name="lastName"/></td>
+			</tr>
+			<tr>
+				<td>Address : </td>
+				<td><textarea id="address" name="address" rows="5" cols="20"/></textarea></td>
+			</tr>
+			<tr>
+				<td>Gender : </td>
+				<td><input type="radio" name="gender" value="m"/> Male
+					<input type="radio" name="gender" value="f"/> Female</td>
+			</tr>
+			<tr>
+				<td>DOB(dd/mm/yyyy):</td>
+				<td><input type="text" name="dob" ></td>
+			</tr>
+			<tr>
+				<td> Skills: </td>
+				<td><input type="checkbox" name="skill" value="selenium"/>Selenium &nbsp;&nbsp;
+				<input type="checkbox" name="skill" value="testing"/>Testing &nbsp;&nbsp;
+				<input type="checkbox" name="skill" value="java"/> Java &nbsp;&nbsp;
+				</td>
+			</tr>
+			<tr>
+				<td> state : </td>
+				<td><select name="state">
+						<option value="0">SELECT</option>
+						<option value="1">KARNATAKA</option>
+						<option value="2">ANDHRA</option>
+						<option value="3">TELENGANA</option>
+						<option value="4">TAMILNADU</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td>Numbers :</td>
+				<td>
+					<select name="alloptions" multiple>
+						<option value="1">ONE</option>
+						<option value="2">TWO</option>
+						<option value="3">THREE</option>
+						<option value="4">FOUR</option>
+						<option value="5">FIVE</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>Resume :</td>
+				<td><input type="file" name="resume" /></td>
+			</tr>
+			<tr>
+				<td>link :</td>
+				<td><a href="http://www.google.com" title="googleLink">google</a></td>
+			</tr>
+			<tr>
+				<td>Image : </td>
+				<td><img src="https://www.w3schools.com/images/w3schools_green.jpg" alt="W3Schools.com"><td>
+			</tr>
+			<tr>
+				<td><input type="submit" value="Login"/></td>
+				<td><input type="Reset" value="Reset"/></td>
+			</tr>
+		 	
+		</table>
+		</form>
+	</body>
+</html>
+
+		 

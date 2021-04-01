@@ -1,0 +1,116 @@
+Wrapper class   -- final class
+primitive		Wrapper
+	byte    - Byte
+	short   - Short
+	int     - Integer
+	long    - Long
+	float   - Float
+	double  - Double
+	char    - Character
+	boolean - Boolean
+
+
+Boxing -- Converting primitive data into an object is called as Boxing Operation
+or
+wrapping up the primitive data into an object by using Wrapper classess is called as Boxing Operation
+
+Un-Boxing -- getting primitive data which is stored as an object  into primitive data type is called as Un-Boxing Operation
+or
+un-wrapping up the primitive data from  the object by using Wrapper classess is called as un-Boxing Operation
+
+
+purpose /usage --
+	
+	1. // primitive to (integer) obj  -- Boxing operation  -- auto boxing
+
+		Integer obj1 = new Integer(i); 
+
+		Integer obj2 = Integer.valueOf(i);
+
+		Integer obj3 = i;// auto boxing -- 
+
+	2. // wrapper obj to String
+		String s2 = obj1.toString();
+	
+	3.  // converting (Integer) obj to primitive  -- unboxing operation --- auto unboxing
+		
+		int j = obj2.intValue();
+
+		int j = obj3;
+
+	4. // converting primitive to String 
+		String s1 = Integer.toString(i);
+
+	5. //Converting String to respective Wrapper Object
+		Integer obj3 = Integer.valueOf("25");
+
+	6. //Converting String to respective primitive
+		int k = Integer.parseInt(s1);
+
+---------=============----------------==============-----------------===============---------------============---
+
+String Class -- final class
+
+
+// ways to create String
+
+		1. String s1 = new String("Hello");
+		2. String s2 = "Hello";
+		
+		char[] x = {'H', 'e', 'l', 'l', 'o'};
+		3. String s3 = new String(x);
+
+
+//String pool //SCP - NCP
+-All String Object will be created in String Pool.
+-String pool is further divided into constant pool and Non constant pool
+
+-String Constant pool -- -- String object created using double quotes will be stored in Constant pool
+			-- In Constant pool Duplicates are NOT allowed
+	String s1 = "Hi";
+
+	String s6 = "Hi" + "Hello";
+	
+
+NOn Constant pool -- String object created using new operator will be stored in Non-Constant Pool
+			-- In Non-Constant pool Duplicates are  allowed
+	String s4 = new String("HiHello");
+
+	String s5 = "Hi" + s2;
+
+	String s7 = "Hi".concat("Hello");
+
+while concating two string if we are using a reference variable then resultant string will created using new operator
+
+Always we should compare string value using equals method
+
+
+// some String methods
+
+	length()
+	charAt(4)
+	indexOf('i')
+	indexOf('n', 2))
+
+	toUpperCase()
+	startsWith("India")
+
+	substring(6)
+	substring(6, 8)
+
+
+// immutable String - cannot change the object content once created.
+	if we try to change the string content for any string object -- it will create a new object
+
+	why string is immutable?
+
+
+// String Buffer and Builder are mutable and hence content getting added/appended
+
+// String Builder is also mutable object like buffer
+	// only difference is buffer is synchronized and builder is non synchronized
+	// Buffer is thread safe
+	// builder is not thread safe
+
+---------=============----------------==============-----------------===============---------------============---
+Task -- string logical coding-- new sheet
