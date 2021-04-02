@@ -1,0 +1,77 @@
+Exception 
+
+exceptions are nothing but run time error.
+some statements will be syntactically correct but might behave abnormally at run time, resulting in run time error
+if a program results in run time error , then it will be teminated abruptly
+so addressing run time error through try catch block , so that program continues its execution , is called as exception handling
+we can handle run time error using try catch block
+risky statement which might behave abnormally at run time , should be kept inside try block and a appropriate catch block to addres the exception
+if exception is handled using  try catch then program will not be terminated abruptly , program will continue its execution
+
+
+
+						Object
+
+			
+	--------------------------------------Throwable------------------------------------------------
+	|				 						|
+	Error									------Exception----------------						 			
+        |-StackOverflowError	   				|							   |
+	|-OutOfMemoryError	   			RuntimeException				 |-ClassNotFoundException
+	|-NoClassDefinationFounfError			|-ArithmeticException				 |-SQLException
+	|-NoSuchMethodError	  			|-NullPointerException				 |-IOException
+	|-NoSuchFieldError	   			|-ArrayIndexOutOfBoundsException			|-FileNotFoundException
+	|-AssertionError	   	  		|-ClassCastException				 |-CloneNotSupportedException
+							|-NumberFormatException				 |-InterruptedException
+													 |-ParseException
+	
+
+one try block can have any number of catch block but only appropriate catch block will execute
+we should develop catch block from most specific exception class to most generic exception class 
+and we should duplicate exception
+Throwable catch block can handle any type of exception ,
+because Throwable is the supermost class for all exception related classes
+ 
+
+
+There are two type of exception :-
+1. checked
+2. unchecked
+
+1. Unchecked -- unchecked will not be detected at complie time. 
+	Here compiler cannot identify that certain statement might generate exception or behave abnormally at run time
+	this kind of exception is known as unchecked exception
+	All Error related classes and RunTimeException Related classed fall under unchecked exception
+
+2. Checked -- checked exception will be detected at compile time.
+	Here compiler can identify that certain statement might generate exception or behave abnormally at execution time
+	there are two ways to handle them 
+	1. try catch
+	2. using throws keyword in method signature
+	
+	throws is keyword which is used to re-throw the already generated exception
+	or it delegates the exception to other method
+
+
+finally is a block which will used in exception handling
+finally block will be used to executed certain statements without fail , irrespective of exception occured or not
+e.g. sql connection , file system 
+All the connection established b/w database , file system of computer can be closed inside finally block 
+so that resources will be used efficiently
+
+
+
+garbage collection :- 
+
+	the process of removing the unreachable or abandoned object from the heap memory is called as garbage collection.
+
+	abandoned object means those object which will not have any reference 
+
+	Garbage collector is a background thread or daemon thread (lowest priority thread)
+	which will clear the abandoned objects from the heap memory 
+	by using the finalize() method of the abandoned object
+
+Assignment question ? what is difference between final , finally and finalize?
+
+
+creating user defined exception -- by inheriting any of the exception class
