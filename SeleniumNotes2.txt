@@ -1,0 +1,40 @@
+handling drop down(having select tag only) -- using Select class
+
+WebElement ele = driver.findElement(By.name("state"));
+Select dd = new Select(ele);
+dd.selectByIndex(2);
+dd.selectByValue("1");
+dd.selectByVisibleText("TELENGANA");
+
+dd.isMultiple()
+
+dd.getOptions()
+
+dd.getAllSelectedOptions()
+
+
+-------------=======------------===========
+
+Synchronization -- mathcing speed of script to the application speed
+
+waits in 
+
+1. Thread.sleep()
+2. implicit wait
+	driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS); 
+3. Explicit wait --
+	WebDriverWait wait = new WebDriverWait(driver, 30);
+	wait.until(ExpectedConditions.titleContains("actiTIME - Enter Time-Track"));
+
+
+difference between                    implict wait	and		explicit wait
+1. only on element identification 
+2. only once for driver instance
+3. exception thrown -
+4. Time unit
+
+
+=========------------==========-------==
+handling auto suggestion
+more with keys enum --- copy paste etc
+staleElementException
