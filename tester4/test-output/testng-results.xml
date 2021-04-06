@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="33596" started-at="2020-02-10T03:54:11Z" finished-at="2020-02-10T03:54:45Z">
+    <groups>
+    </groups>
+    <test name="Test" duration-ms="33596" started-at="2020-02-10T03:54:11Z" finished-at="2020-02-10T03:54:45Z">
+      <class name="com.pack1.Tester">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.pack1.Tester@c038203]" name="beforeMethod" is-config="true" duration-ms="5400" started-at="2020-02-10T09:24:11Z" finished-at="2020-02-10T09:24:17Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="atitimeLogin()[pri:0, instance:com.pack1.Tester@c038203]" name="atitimeLogin" duration-ms="27061" started-at="2020-02-10T09:24:17Z" finished-at="2020-02-10T09:24:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- atitimeLogin -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.pack1.Tester@c038203]" name="afterMethod" is-config="true" duration-ms="1096" started-at="2020-02-10T09:24:44Z" finished-at="2020-02-10T09:24:45Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+      </class> <!-- com.pack1.Tester -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>

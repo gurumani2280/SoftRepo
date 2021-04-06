@@ -1,0 +1,153 @@
+
+Q) What is testng?
+	TestNG is a unit testing framework designed to simplify a broad range of testing needs.
+	It is unit testing framework. 
+	Basically TestNG is used by developers to perform unit testing 
+	and it is also used in selenium to perform BlackBox testing.
+
+Q) why testng?/advantages of testng.
+	Report, summary report, dataprovider, parameter, pre and post conditions, priority.
+	TestNG provides parallel execution of test methods
+	It allows to define dependency of one test method over other method
+	It allows to assign priority to test methods
+	It has support for parameterizing test cases using @Parameters annotation
+	It allows data driven testing using @DataProvider annotation
+	It has different assertions that helps in checking the expected and actual results
+	Detailed (HTML) reports
+
+
+Q) What are the annotations used in testng?
+	@BeforeSuite
+	@BeforeTest
+	@BeforeClass
+	@BeforeMethod
+	@Test
+	@AfterMethod
+	@AfterClass
+	@AfterTest
+	@AfterSuite
+	
+	@DataProvider(name="xxxx")
+	@Parameters("xxxxx")
+
+	@BeforeGroups
+	@AfterGroups
+
+Q) Can you arrange the below testng.xml tags from parent to child?
+
+<test>
+<suite>
+<class>
+<methods>
+<classes>
+The correct order of the TestNG tags are as follows
+	<suite>
+	<test>
+	<classes>
+	<class>
+	<methods>
+
+Q). How to create and run testng.xml ? 
+
+	we can create testng xml by right the package containing testng classes and selecting convert to testng.
+	In TestNG framework, we need to create testng.xml file to create and handle multiple test classes. 
+	We do configure our test run, set test dependency, include or exclude any test, method, class or package and set priority etc in the xml file.
+
+
+Q). What is the importance of testng.xml file?
+
+	In a Selenium TestNG project, we use testng.xml file to configure the complete test suite in a single file. 
+	Some of the features are as follows.
+
+	testng.xml file allows to include or exclude the execution of test methods and test groups
+	It allows to pass parameters to the test cases
+	Allows to add group dependencies
+	Allows to add priorities to the test cases
+	Allows to configure parallel execution of test cases
+	Allows to parameterize the test cases
+
+Q). How to set test case priority in TestNG?
+
+	We use priority attribute to the @Test annotations.
+	In case priority is not set then the test scripts execute in alphabetical order.
+	@Test(priority=1)
+
+Q) What is the order of execution of @test in case of multiple @test in a file? or If class contains multiple test methods in which order they are executed?
++How can we control the order?
+	The order of execution of @test is based on alphabetical order.
+	We can control the order of execution by giving priority.
+	Less value is given more priority.
+	
+Q) What is @DataProvider?
+	@DataProvider is used to provide datas to the @Test method.
+	It returns two dimensional object.
+	@Test will run based on the data provider rows.
+	The number of datas (columns)in the data provider should match the number of arguments in the @Test method.
+
+Q) What is @Parameters?	(String param=x.getParameter("param1")
+	<parameter name="browser" value="chrome"/> is given testng.xml
+	@Parameters("browser") is given immediately after the @Before  and @Test annotation.
+
+Q) What is the use of @Test(invocationCount=x)?
+
+	The invocationcount attribute tells how many times TestNG should run a test method
+
+Q) How to Ignore a test case in TestNG? or How to disable a test case in TestNG ?
+
+	To ignore or disable the test case we use the parameter enabled = false to the @Test annotation.
+	@Test(enabled = false)
+
+Q)  How to run test cases in parallel using TestNG?
+
+	we can use “parallel” attribute in testng.xml to accomplish parallel test execution in TestNG
+	The parallel attribute of suite tag can accept four values:
+
+	tests – All the test cases inside <test> tag of testng.xml file will run parallel
+	classes – All the test cases inside a java class will run parallel
+	methods – All the methods with @Test annotation will execute parallel
+	instances – Test cases in same instance will execute parallel but two methods of two different instances will run in different thread.
+
+	<suite name="softwaretestingmaterial" parallel="methods">
+
+
+Q) How to achieve pre and post condition?
+	We can achieve pre and post condition using @BeforeSuite, @BeforeTest, @BeforeClass, @BeforeMethod
+						    @AfterSuite, @AfterTest, @AfterClass, @AfterMethod
+	
+
+Q) How to fail test case in testng?
+	if any exception occurs during the execution @Test, then that test will be marked as failed.
+	we can use Assert class of testng to validate and fail a test case in case of failure.
+	we can also use SoftAssert class for the same.
+
+Q) What is assert in testng? or What is Hard Assert in TestNG?
+ or  What is TestNG Assert and list out common TestNG Assertions?
+
+	TestNG Asserts help us to verify the condition of the test in the middle of the test run.
+	Based on the TestNG Assertions, we will consider a successful test only if 
+	it is completed the test run without throwing any exception.
+
+	Some of the common assertions supported by TestNG are
+
+	assertEqual(String actual,String expected)
+	assertEqual(String actual,String expected, String message)
+	assertEquals(boolean actual,boolean expected)
+	assertTrue(condition)
+	assertTrue(condition, message)
+	assertFalse(condition)
+	assertFalse(condition, message)
+
+	Hard Assert throws an AssertException immediately when an assert statement fails and 
+	test suite continues with next @Test
+
+Q) What is Soft Assert in TestNG?
+
+	Soft Assert collects errors during @Test.
+	Soft Assert does not throw an exception when an assert fails and 
+	would continue with the next step after the assert statement.
+
+	If there is any exception and you want to throw it then you need to use assertAll() method
+	as a last statement in the @Test and test suite again continue with next @Test as it is.
+
+Q) Difference between softAssert and Assert.
+

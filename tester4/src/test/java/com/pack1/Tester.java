@@ -1,0 +1,30 @@
+package com.pack1;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+
+public class Tester extends BaseTest{
+	
+	@Test
+	public void atitimeLogin()
+	{
+		driver.get("https://demo.actitime.com/login.do");
+		driver.findElement(By.name("username")).sendKeys("admin");
+		driver.findElement(By.name("pwd")).sendKeys("manager");
+		driver.findElement(By.id("loginButton")).click();
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+		wait.until(ExpectedConditions.titleContains("Enter Time-Track"));
+		String actualtitle = driver.getTitle();
+		String expectedTitle = "actiTIME - Enter Time-Track";
+		
+		Assert.assertEquals(actualtitle, expectedTitle, "The title didnot match");
+		driver.findElement(By.id("logoutLink")).click();
+
+
+	}
+
+}
