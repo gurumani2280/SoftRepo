@@ -1,0 +1,109 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf600
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Q) How to execute javascript?	(generate alert,  page scroll, click & send)\
+	\
+	//RemoteWebDriver rv=(RemoteWebDriver) driver;\
+\
+	//EventFiringWebDriver rv=new EventFiringWebDriver (driver);\
+	JavascriptExecutor rv=(JavascriptExecutor) driver;\
+	\
+	rv.executeScript("alert('Hi')");\
+	rv.executeScript("prompt('Hi')");\
+	rv.executeScript("confirm('Hi')");\
+\
+	String c="document.getElementById('firstname').value='admin'";\
+	\
+	rv.executeScript(c);\
+\
+	WebElement ele = driver.findElement(By.xpath("//input[@value='testing']"));\
+	rv.executeScript("arguments[0].click();", ele);\
+\
+	String c ="window.scrollTo(0,document.body.scrollHeight)";\
+		rv.executeScript(c);\
+	\
+\
+Q) How to click/sendKeys on disabled element?\
+	We can perform click/sendkeys even on disabled element using JavaScript.\
+\
+	\
+\
+	JavascriptExecutor rv=(JavascriptExecutor) driver;\
+	String c="document.getElementById('firstname').value='admin'";\
+	rv.executeScript(c);\
+		\
+	\
+	WebElement ele = driver.findElement(By.xpath("//input[@value='testing']"));\
+	JavascriptExecutor rv=(JavascriptExecutor) driver;\
+	rv.executeScript("arguments[0].click();", ele);\
+		\
+\
+Q) How to take screenShot?\
+	We can take screenShot using TakesScreenshot, RemoteWebDriver and EventFiringWebDriver.\
+		RemoteWebDriver r=(RemoteWebDriver)driver;\
+		// EventFiringWebDriver r=new EventFiringWebDriver(driver);\
+		// TakesScreenshot r=(TakesScreenshot)driver;\
+		File src=r.getScreenShotAs(OutputType.FILE);\
+		File trg=new File("*/snap.png");\
+		FileHandler.copy(src,trg);\
+\
+Q) How to perform mouseover, double click, right click, drag and drop and sendKeys?\
+	Mouseover, double click, right click, drag and drop and sendKeys are perfoemed by Actions class.\
+	MOUSEOVER\
+		Actions a=new Action(driver);\
+			a.moveToElement(driver.findElement(By.xpath("//xxx"))).perform();\
+	RIGHTCLICK\
+		Actions a1=new Action(driver);\
+		a1.contextClick(driver.findElement(By.xpath("//xxx"))).perform();	\
+	DRAG AND DROP\
+		Actions a2=new Action(driver);\
+		WebElement src=driver.findElement(By.xpath("//xxx"));\
+		WebElement trg=driver.findElement(By.xpath("//xxx"));\
+		a2.dragAndDrop(src.trg).perform();\
+	\
+Q) How to handle multiple windows?\
+	String parentwin=driver.getWindowHandle();	//returns current window in string format.\
+	Set<String> allwin=driver.getWindowHandles();	//returns all windows in set of String.\
+	for(String allwindows : allwin)\
+	\{	\
+		if(parentwin.equals(allwindows))\
+		\{\
+			System.out.println("I am parent window:"+allwindows)	\
+		\}\
+		else\
+		\{\
+			System.out.println("I am child window:"+allwindows)\
+			driver.switchTo.window(allwindows);\
+			driver.close();\
+		\}\
+	\}\
+	driver.quit();\
+	\
+Q) How to handle frames?\
+	driver.switchTo().frame(arg);\
+	frame(arg) --> argument accepts	i)string(name/id)\
+					ii)index\
+					iii)WebElement	\
+		It is an overloaded method.\
+	switching between the frames is not possible.\
+	Again switch back to parent window using driver.switchTo().defaultContent();\
+\
+Q) How to upload a file? \
+	driver.sendKeys("location of the file");\
+\
+Q) How to download?	(using chromeOption)\
+	System.setProperty("webdriver.chrome.driver", "path_Of_chromedriver.exe");\
+	Map<String, Object> prefsMap = new HashMap<String, Object>();\
+	prefsMap.put("profile.default_content_settings.popups", 0);\
+	prefsMap.put("download.default_directory", fileDownloadPath);\
+			\
+	ChromeOptions option = new ChromeOptions();\
+	option.setExperimentalOption("prefs", prefsMap);\
+	option.addArguments("--test-type");\
+	option.addArguments("--disable-extensions");\
+\
+	driver = new ChromeDriver(option);}
