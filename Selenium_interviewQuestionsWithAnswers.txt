@@ -1,0 +1,801 @@
+			Selenium ,  testng and framework interview questions
+
+1) What is automation?
+	Converting manual test cases into automation script.
+
+2) Why to go for automation?
+	To overcome the drawbacks of manual testing, We go for automation. Manual testing requires
+		i) More man power
+		ii) More time
+		iii) Human may tend to do mistakes as manual is monotonus.
+
+3) What is selenium?
+	Selenium automates browsers. That's it! 
+	Selenium is a set of tools and libraries which is used to automate browsers.
+
+4) What is webdriver?
+	WebDriver is an interface in which all the methods are invoked by the browser classes.
+
+5) List out the browsers supported by WebDriver.
+	WebDriver supports multiple browsers like chrome, firefox, ie, opera and safari.
+
+6) Selenium/webdriver hierarchy?
+	SearchContext is super most interfaces which are extended by WebDriver interface.
+	Abstract methods of these two interfaces is implemented in Remote WebDriver class
+	and overridden in respective browser classes such as FirefoxDriver, ChromeDriver, InternetExplorerDriver, SafariDriver etc.
+
+7) How selenium works? and Which protocol is used by Selenium to interact/communicate with the browser?
+	By calling the native methods of the browser.
+	JSON Wire Protocol (Java Script Object Notation)
+
+	Selenium supports multiple coding languages. 
+	Each language has its own binding which communicates with WebDriver API.
+	The WebDriver API performs the action on the browser by using browser specific drivers (Uses JSON Wire Protocol)
+
+8) How to launch chrome browser?
+	System.setProperty("webdriver.chrome.driver", "path_Of_chromedriver.exe");
+	WebDriver driver=new ChromeDriver();
+
+9) How to launch firefox driver?
+	System.setProperty("webdriver.gecko.driver", path_Of_geckodriver.exe);
+	WebDriver driver=new FireFoxDriver();
+
+10) WebDriver driver = new ChromeDriver?Explain this line.
+	WebDriver is an interface.
+	Driver is the reference variable. = is the assignment operator.
+	new is operator used for creating new memory space in heap memory.
+	ChromeDriver() constructor is invoked.
+	Auto upcasting is done here. we can achieve polymorphism with this.
+	
+
+11) How to maximize the launched browser?
+	driver.manage().window().maxmize()
+
+12) How to launch/open an application? 
+	We can launch the application by specifying the url inside the get() or navigate()
+	driver.get(url) or driver.navigate.to(url)
+	url should have protocol like http or file
+
+13) How to navigate back/forward in browser?
+	driver.navigate().back() --> moves a sinlge item back in the browser history.
+	driver.navigate().forward() --> moves a single front in the browser history.
+
+14) Difference between close() and quit()?
+	close() --> closes the only the browser which controlled by webdriver.
+	            At a time, webdriver can have control over only one browser.
+	quit()  --> closes all the browsers opened by the WebDriver.
+
+15) How to get the title of the webpage?
+	driver.getTitle() --> returns the current title of the webpage.
+
+16) How to get url of te webpage?
+	driver.getUrl() --> returns the current url of the webpage.
+
+17) How to get page source?
+	driver.getPagesource() -->returns the html page sources of the current webpage.
+
+18) How to identify element?
+	WebElements are identified using
+			i)driver.findElement(By.id())
+			ii)findElements(By.name())
+			iii) @findBy when using page object model with pagefactory
+
+19) Difference findElement and findElements?
+	findElement()
+		i) Return type is WebElement
+		ii) Finds the first element in the current webpage which is matching by the given locator.
+		iii) If no matching is found, then it throws NoSuchElementFoundException.
+		
+	findElements()
+		i) Return Type is List<WebElement>
+		ii) Finds all the elements in the current webpage which are matching by the given locator.
+		iii) If no matchings are found, then it returns an Empty ArrayList.
+
+	
+
+20) List out the static methods of By class used in findElement.
+	There are 8 static method of By class.
+	id(),name(),linkText(), partialLinkText(),
+	cssSelector(), Xpath(), tagName(), className()
+
+21) How to inspect element?
+	i) Right click on the webpage.
+	ii) Select the locator.
+	iii) And click on the required element, then it will be highlighted on the pagesource.
+
+22) What is WebElement?
+	Anything present on the web page is called as WebElement. Such as textbox, button, link etc.
+	Elements are created using HTML. It stands for ‘Hyper Text Markup Language’.
+	WebElement is an interface which is used to interact with the individual webElement.
+	Most of the user actions are performed by using WebElement methods.
+	sendKeys() and click() are mostly used webElement methods.
+
+23) What are the methods of webDriver?
+	get(), getTitle(), getUrl(), getPageSource(), 
+	navigate().to(), navigate().back(), navigate().forward(),navigate().refresh(),
+	close(), quit(), findElement(), findElements()
+
+24) Write down the methods of WebElement?	
+	sendKeys(), 
+	click(), 
+	clear()
+	submit()
+	getAttribute(), getCssValue(), getText(),
+	isDisplayed(), isSelected(), isEnabled() etc.
+
+25) List out the exception occurs in selenium.
+	NoSuchElementFoundException, TimeOutException, StaleElementException.
+	InvalidElementStateException, 
+
+26) Write script to pass some input in google search box?
+	WebElement searchbox=driver.findElement(By.id("xxx"));
+	searchbox.sendKeys("Selenium", Keys.ENTER);
+	
+	
+	
+27) How to perform action on webElement?
+	Using sendKeys() --> to pass input to the WebElement.
+	and click()	---> to click on WebElement.
+
+28) Syntax for cssSelector.
+	tagName[attribute='value']
+
+29) Syntax for xpath.
+	//tagname[@attribute='value']
+	//tagname[text()='visible text']
+	//tagname[contains(@attribute,'value')]
+	//tagname[contains(text(),'value')]
+
+30) Write the script to copy and paste using keys.
+	WebElement firstname=driver.findElement(By.xpath("//xxxx"));
+	firstname.sendKeys("Viji");
+	firstname.sendKeys(Keys.CONTROL+"a");
+	firstname.sendKeys(Keys.CONTROL+"c");
+	driver.findElement(By.xpath("//xxxx")).sendKeys(Keys.CONTROL+"v");
+
+31) Difference between / and //.
+	/ --> searches the immediate child.
+	// --> searches entirely.
+
+32) Difference between /a and //a. //td/a vs //td//a
+	/a --> returns the immediate anchor tag(link) in the html
+	//a --> returns the anchor tag any where in the html
+	//td//a --> returns the anchor tag anywhere inside the td tag(td tag also anywhere inside the html)
+	//td/a --> searches the immediate anchor tag(link) inside the td tag
+
+33) How to handle multiple webElement?
+	driver.findElements(By.xpath("//xxxx"));
+	It return a list of web element. then we can iterate over the list to get the required web element.
+
+34) How to find number of links in the webpage and print their link text?
+	By using tagName "a"
+	List<WebElements> link=driver.findElements(By.xpath("//a");
+	System.out.println("Number of links in the webpage:"+link.size());
+	for(WebElement links:link)
+	{
+	  System.out.println("link text :"+links.getText());
+	}
+
+35) How to identify all dropdown list with in a table?
+	driver.findElements(By.xpath("//table//select")) --> to find dropdown inside the table tag.
+		driver.findElements(By.xpath("//table//option")) --> to find dropdown options inside the table tag.
+	driver.findElements(By.xpath("//input[@type='radio']"))	--> to find all the radio buttons in the webpage.
+	driver.findElements(By.xpath("//input[@type='chechbox']")) --> to find all the checkboxes in the webpage.
+	driver.findElements(By.xpath("//input[@type='text']")) --> to find all the textfields in the webpage.
+
+36) How to get tooltip?	(title)
+	Webelement element = driver.findElement(By.id("idOflink"));
+	String tooltip = element.getAttribute("title");
+	System.out.println(tooltip);
+
+37) How to get text present inside the input tag? getText() or getAttribute("text")
+	Webelement element = driver.findElement(By.id("idOfInput"));
+	String text = element.getAttribute("text");  or element.getText();
+	System.out.println(text);
+	
+
+38) How to get the text entered in the input box?
+	Webelement element = driver.findElement(By.id("idOfInput"));
+	String enteredText = element.getAttribute("value"); 
+	System.out.println(enteredText);
+
+39) How to get font family, size and color?
+	getcssValue("font-size"), getcssValue("color")
+
+40) How to handle select dropdown?
+	WebElement ele = driver.findElement(By.id(""id_Of_DD"));
+	Select s=new Select(ele);
+	s.selectByIndex();
+	s.selectByValue();
+	s.selectByVisibleText();
+
+41)how to find out if the drop down is single select or multi select?
+	Select s=new Select(WebElement);
+	s.isMultiple();
+
+42) How to handle javascript alert?
+	driver.switchTo().alert().accept();
+	driver.switchTo().alert().dismiss();
+	driver.switchTo().alert().getText();
+	driver.switchTo().alert().sendKeys("someText");
+
+	to execute javascript using selenium
+	Using RemoteWebDriver, EventFiringWebDriver and JavaScriptExecuter.
+	RemoteWebDriver r=(RemoteWebDriver) driver;//EventFiringWebDriver r=new EventFiringWebDriver (driver);
+		r.executeScript("alert('Hi')");
+
+43) How to handle autosuggestion?
+
+44) How to refresh the page?
+	driver.navigate().refresh()
+
+45) How to hanlde staleElementException?
+	After identifying the element, if we used driver.navigate().refresh()/back()/forward()
+	and then trying to perform some action on identified element leads to StaleElementException.
+	StaleElementException is handled by re-identifying the element (again).
+
+46) What is synchronisation?
+	Matching the speed of the script execution with the application speed.
+
+47) How to achieve to synchronisation?
+	Synchronisation is achieved by using implicit wait and explicit wait, fluentwait.
+
+48) Types of wait?
+	IMPLICIT WAIT
+		Implicit wait is global wait which is applicable for all the WebElements identification.
+		driver.manage().timeOuts().implicitlyWait(xxx,TimeUnit.SECONDS);
+	ExPLICIT WAIT
+		Explicit wait is not a global wait which is not applicable for all the WebElements.
+		Explicit wait is applied on a particular required WebElement to satisfy the expected conditon.
+		WebDriverWait wait=new WebDriverWait(driver,xx);
+		wait.until(ExpectedConditons.visibilityOfElement("xxxxxx"));
+
+49) What is testng?
+	TestNG is a unit testing framework designed to simplify a broad range of testing needs.
+	It is unit testing framework. 
+	Basically TestNG is used by developers to perform unit testing 
+	and it is also used in selenium to perform BlackBox testing.
+
+50) why testng?/advantages of testng.
+	Report, summary report, dataprovider, parameter, pre and post conditions, priority.
+	TestNG provides parallel execution of test methods
+	It allows to define dependency of one test method over other method
+	It allows to assign priority to test methods
+	It has support for parameterizing test cases using @Parameters annotation
+	It allows data driven testing using @DataProvider annotation
+	It has different assertions that helps in checking the expected and actual results
+	Detailed (HTML) reports
+
+
+51) What are the annotations used in testng?
+	@BeforeSuite
+	@BeforeTest
+	@BeforeClass
+	@BeforeMethod
+	@Test
+	@AfterMethod
+	@AfterClass
+	@AfterTest
+	@AfterSuite
+	
+	@DataProvider(name="xxxx")
+	@Parameters("xxxxx")
+
+	@BeforeGroups
+	@AfterGroups
+
+52) Can you arrange the below testng.xml tags from parent to child?
+
+<test>
+<suite>
+<class>
+<methods>
+<classes>
+The correct order of the TestNG tags are as follows
+	<suite>
+	<test>
+	<classes>
+	<class>
+	<methods>
+
+53). How to create and run testng.xml ? 
+
+	we can create testng xml by right the package containing testng classes and selecting convert to testng.
+	In TestNG framework, we need to create testng.xml file to create and handle multiple test classes. 
+	We do configure our test run, set test dependency, include or exclude any test, method, class or package and set priority etc in the xml file.
+
+
+54). What is the importance of testng.xml file?
+
+	In a Selenium TestNG project, we use testng.xml file to configure the complete test suite in a single file. 
+	Some of the features are as follows.
+
+	testng.xml file allows to include or exclude the execution of test methods and test groups
+	It allows to pass parameters to the test cases
+	Allows to add group dependencies
+	Allows to add priorities to the test cases
+	Allows to configure parallel execution of test cases
+	Allows to parameterize the test cases
+
+55). How to set test case priority in TestNG?
+
+	We use priority attribute to the @Test annotations.
+	In case priority is not set then the test scripts execute in alphabetical order.
+	@Test(priority=1)
+
+56) What is the order of execution of @test in case of multiple @test in a file? or If class contains multiple test methods in which order they are executed?
++How can we control the order?
+	The order of execution of @test is based on alphabetical order.
+	We can control the order of execution by giving priority.
+	Less value is given more priority.
+	
+57) What is @DataProvider?
+	@DataProvider is used to provide datas to the @Test method.
+	It returns two dimensional object.
+	@Test will run based on the data provider rows.
+	The number of datas (columns)in the data provider should match the number of arguments in the @Test method.
+
+58) What is @Parameters?	(String param=x.getParameter("param1")
+	<parameter name="browser" value="chrome"/> is given testng.xml
+	@Parameters("browser") is given immediately after the @Before  and @Test annotation.
+
+59) What is the use of @Test(invocationCount=x)?
+
+	The invocationcount attribute tells how many times TestNG should run a test method
+
+60) How to Ignore a test case in TestNG? or How to disable a test case in TestNG ?
+
+	To ignore or disable the test case we use the parameter enabled = false to the @Test annotation.
+	@Test(enabled = false)
+
+61)  How to run test cases in parallel using TestNG?
+
+	we can use “parallel” attribute in testng.xml to accomplish parallel test execution in TestNG
+	The parallel attribute of suite tag can accept four values:
+
+	tests – All the test cases inside <test> tag of testng.xml file will run parallel
+	classes – All the test cases inside a java class will run parallel
+	methods – All the methods with @Test annotation will execute parallel
+	instances – Test cases in same instance will execute parallel but two methods of two different instances will run in different thread.
+
+	<suite name="softwaretestingmaterial" parallel="methods">
+
+
+62) How to achieve pre and post condition?
+	We can achieve pre and post condition using @BeforeSuite, @BeforeTest, @BeforeClass, @BeforeMethod
+						    @AfterSuite, @AfterTest, @AfterClass, @AfterMethod
+	
+
+63) How to fail test case in testng?
+	if any exception occurs during the execution @Test, then that test will be marked as failed.
+	we can use Assert class of testng to validate and fail a test case in case of failure.
+	we can also use SoftAssert class for the same.
+
+64) What is assert in testng? or What is Hard Assert in TestNG?
+ or  What is TestNG Assert and list out common TestNG Assertions?
+
+	TestNG Asserts help us to verify the condition of the test in the middle of the test run.
+	Based on the TestNG Assertions, we will consider a successful test only if 
+	it is completed the test run without throwing any exception.
+
+	Some of the common assertions supported by TestNG are
+
+	assertEqual(String actual,String expected)
+	assertEqual(String actual,String expected, String message)
+	assertEquals(boolean actual,boolean expected)
+	assertTrue(condition)
+	assertTrue(condition, message)
+	assertFalse(condition)
+	assertFalse(condition, message)
+
+	Hard Assert throws an AssertException immediately when an assert statement fails and 
+	test suite continues with next @Test
+
+65) What is Soft Assert in TestNG?
+
+	Soft Assert collects errors during @Test.
+	Soft Assert does not throw an exception when an assert fails and 
+	would continue with the next step after the assert statement.
+
+	If there is any exception and you want to throw it then you need to use assertAll() method
+	as a last statement in the @Test and test suite again continue with next @Test as it is.
+
+66) Difference between softAssert and Assert.
+
+67) What are the advantages of pom?
+	Adv: all locators at one place
+	     we can avoid stale element exception
+	Dis: cannot have dynamic locators -- LIMITATIONS OF @FindBy
+
+68) What is pom design pattern?
+	Pom stands for page object model.
+	To avoid StaleElementReferenceException we use Page Object Model, POM class. 
+	POM is one of the Java design pattern.
+	Every page of web application can be converted into java class. 
+	Using FindBy Annotation (@FindBy)
+	all the WebElements on page are captured as private data members.
+	Every functionality on page is captured as behaviour/member funtion.
+
+69) How do you handle multiple elements in pom class?
+	 we handle it using @FindBy itself and we change the datatype to List<WebElement>
+	 @FindBy(xpath="//input[@type='checkbox']")
+	 private List<WebElement> allChkBox;
+
+70) What happens if we do not use intiElements() method in POM class?
+	we get NullPointerException
+
+71) What is the difference between Page Object Model and PageFactory
+	 POM is java design concept. PageFactory is class which implements concept.
+
+72) How to create page class?
+	Every web page of web application will have a corresponding java class.
+	all the WebElements on page are captured as private data members
+	Using FindBy Annotation (@FindBy).
+	
+	Every functionality on page is captured as behaviour/member funtion.
+	
+	Create a globle date member - WebDriver reference.
+
+	create public constructor with WebDriver as an argument
+
+	inside constructor 
+		i. initialize global variable WebDriver
+		ii. initialize all web element using page Factory class
+			at one instance using PageFactory.initElements(driver, this)
+	
+	class LoginPage{
+	WebDriver driver;
+		LoginPage(WebDriver driver)
+		{
+		this.driver=driver;
+			PageFactory.initElements(driver,this);
+		}
+		@FindBy(id="xxxx")
+		private WebElement usernameTextField;
+		@FindBy(name="xxxx")
+		private WebElement passwordTextField;
+		@FindBy(xpath="xxxx")
+		private WebElement loginbutton;
+			
+		public void login(String name,String pass)
+		{
+		usernameTextField.sendKeys(name);
+		passwordTextField.sendKeys(pass);
+		loginbutton.click();
+		}
+		
+	}
+
+
+73) How to execute javascript?	(generate alert,  page scroll, click & send)
+	
+	//RemoteWebDriver rv=(RemoteWebDriver) driver;
+
+	//EventFiringWebDriver rv=new EventFiringWebDriver (driver);
+	JavascriptExecutor rv=(JavascriptExecutor) driver;
+	
+	rv.executeScript("alert('Hi')");
+	rv.executeScript("prompt('Hi')");
+	rv.executeScript("confirm('Hi')");
+
+	String c="document.getElementById('firstname').value='admin'";
+	
+	rv.executeScript(c);
+
+	WebElement ele = driver.findElement(By.xpath("//input[@value='testing']"));
+	rv.executeScript("arguments[0].click();", ele);
+
+	String c ="window.scrollTo(0,document.body.scrollHeight)";
+		rv.executeScript(c);
+	
+
+74) How to click/sendKeys on disabled element?
+	We can perform click/sendkeys even on disabled element using JavaScript.
+
+	
+
+	JavascriptExecutor rv=(JavascriptExecutor) driver;
+	String c="document.getElementById('firstname').value='admin'";
+	rv.executeScript(c);
+		
+	
+	WebElement ele = driver.findElement(By.xpath("//input[@value='testing']"));
+	JavascriptExecutor rv=(JavascriptExecutor) driver;
+	rv.executeScript("arguments[0].click();", ele);
+		
+
+75) How to take screenShot?
+	We can take screenShot using TakesScreenshot, RemoteWebDriver and EventFiringWebDriver.
+		RemoteWebDriver r=(RemoteWebDriver)driver;
+		// EventFiringWebDriver r=new EventFiringWebDriver(driver);
+		// TakesScreenshot r=(TakesScreenshot)driver;
+		File src=r.getScreenShotAs(OutputType.FILE);
+		File trg=new File("*/snap.png");
+		FileHandler.copy(src,trg);
+
+76) How to perform mouseover, double click, right click, drag and drop and sendKeys?
+	Mouseover, double click, right click, drag and drop and sendKeys are perfoemed by Actions class.
+	MOUSEOVER
+		Actions a=new Action(driver);
+			a.moveToElement(driver.findElement(By.xpath("//xxx"))).perform();
+	RIGHTCLICK
+		Actions a1=new Action(driver);
+		a1.contextClick(driver.findElement(By.xpath("//xxx"))).perform();	
+	DRAG AND DROP
+		Actions a2=new Action(driver);
+		WebElement src=driver.findElement(By.xpath("//xxx"));
+		WebElement trg=driver.findElement(By.xpath("//xxx"));
+		a2.dragAndDrop(src.trg).perform();
+	
+77) How to handle multiple windows?
+	String parentwin=driver.getWindowHandle();	//returns current window in string format.
+	Set<String> allwin=driver.getWindowHandles();	//returns all windows in set of String.
+	for(String allwindows : allwin)
+	{	
+		if(parentwin.equals(allwindows))
+		{
+			System.out.println("I am parent window:"+allwindows)	
+		}
+		else
+		{
+			System.out.println("I am child window:"+allwindows)
+			driver.switchTo.window(allwindows);
+			driver.close();
+		}
+	}
+	driver.quit();
+	
+78) How to handle frames?
+	driver.switchTo().frame(arg);
+	frame(arg) --> argument accepts	i)string(name/id)
+					ii)index
+					iii)WebElement	
+		It is an overloaded method.
+	switching between the frames is not possible.
+	Again switch back to parent window using driver.switchTo().defaultContent();
+
+79) How to upload a file? 
+	driver.sendKeys("location of the file");
+
+80) How to download?	(using chromeOption)
+	System.setProperty("webdriver.chrome.driver", "path_Of_chromedriver.exe");
+	Map<String, Object> prefsMap = new HashMap<String, Object>();
+	prefsMap.put("profile.default_content_settings.popups", 0);
+	prefsMap.put("download.default_directory", fileDownloadPath);
+			
+	ChromeOptions option = new ChromeOptions();
+	option.setExperimentalOption("prefs", prefsMap);
+	option.addArguments("--test-type");
+	option.addArguments("--disable-extensions");
+
+	driver = new ChromeDriver(option);
+	
+81) How to execute on grid?
+	To run automation scripts on multiple browsers on 
+	multiple environments (remote computers) we can use Selenium Grid.
+	In Selenium Grid, we will have two types of systems:
+	i)hub --- it is the computer where framework is present 
+	and we start the execution from this computer, 
+	after the execution result is also stored in this system. 
+	Selenium grid has only one Hub.
+
+	ii) node  -- Node refers to remote computer on which actual execution happens. 
+	In Selenium grid there could be one or more node communicating with the hub.
+
+	To implement this concept, we should perform following steps
+	a. Start the hub --  
+		java -jar selenium-server-standalone-3.141.59.jar -role hub
+		It should display following message
+		“Selenium Grid hub is up and running”
+
+	b. Start the node  and register with hub
+		Go to the remote system where the brower has to be opened 
+		and script should be executed.
+		java –jar e:\s.jar –role node –hub http://192.168.1.23:4444 –Dwebdriver.chrome.driver=./chromedriver.exe
+
+	c. Execute Framework or script using RemoteWebDriver from the hub .
+		Capabilities capability = DesiredCapabilities.chrome();
+		URL url = new URL("http://192.168.1.23:4444/wd/hub");
+		WebDriver driver  = new RemoteWebDriver(url, capability);
+
+82) How to read data from excel file?
+
+	XSSFWorkBook workbook=new XSSFWorkBook("location of the workbook"); 
+	XSSFSheet sheet=workbook.getSheet("sheet name"/index);
+	int row=sheet.getPhysicalNumberOfRows();
+	System.out.println("Number of rows:"+r);
+	String s=sheet.getRow(0).getColumn(0).getStringCellvalue();	//fetches string value
+	int i=sheet.getRow(0).getColumn(1).getNumericCellvalue();	//fetches numeric value
+	
+	====---===--==-=-=-=
+			
+			FileInputStream fis = new FileInputStream(new File("location_of_xlsx_file"));
+			Workbook wb = WorkbookFactory.create(fis);		
+			Sheet st = wb.getSheet(sheetName);
+			Row r = st.getRow(rIndex);
+			Cell c = r.getCell(cIndex);
+			data = c.toString();
+
+	Every thing should be in try catch -- lot of exeptions can occur
+
+83) How to read data from property file?
+	property file is key value pair and it assumes everything in String format.
+	
+	Properties pro=new Properties();
+	FileInputStream input=new FileInputStream(new File("location_of_property_file"));
+	pro.load(input);
+	String value = pro.getProperty("property_name");
+
+84) How to run testng from pom.xml?
+	right click pom.xml and select maven then maven test
+	surefire plugin and path of the testng xml should included in pom.xml
+
+85) How to run testng xml using mvn command?
+	mvn test command in cmd prompt
+
+86) What is maven?
+	Maven is a build and dependency management tool for java related api.
+	Maven is a cloud repository which maintains all the dependecies and their sub group
+	along with multiple version.
+
+	Groups are identified using groupId, sub groups are identified using artifactId
+	and versions are identified through versionNumber
+
+87) How to put test-output folder to some folder before every test suite run to avoid overidding ?
+	inside @BeforeSuite
+	
+	public static String TESTNG_TESTREPORT_FOLDER = "Test-Reports//"
+			+ new SimpleDateFormat("ddMMMYY_HH.mm").format(new Date()) + "//";
+	
+	File targetfolder = new File(TESTNG_TESTREPORT_FOLDER);
+	File srcfolder = new File("./test-output");
+	try {
+		FileHandler.createDir(targetfolder);
+		FileHandler.copy(srcfolder, targetfolder);
+		
+	} catch (IOException e1) {
+		e1.printStackTrace();
+	}
+
+
+88) Write a script to login to actitime application.
+89) Write a script to open google.com and verify that title is Google and also verify that it is redirected to google.com
+90) Write a script to count the no.of checkboxes present on the page?
+
+91) how to re-run only the failed testng classes?
+	Using testng-failed.xml file which is present 
+	under test-output folder of the automation framework
+
+92) What is automation framework?
+	It is the standard rules, best practices , guidelines and folder structure 
+	which should be followed while automating the application testing, so that
+	conversion of manual test cases to automation script is done efficienlty.
+	We should follow the Automation Framework to have consistancy.
+
+93) what are the advantages of automation framework?
+	1. generate results automatically for each scenario
+	2. easy maintaince of automation scripts
+	3. manage application changes easily
+	4. reduce scripting efforts
+	5. managing dependencies automatically
+
+94) What are the types of Framework?
+	1. Linear automation Framework
+		creating automation script by record and playback 
+	2. Method or function Driven automation framework
+		developing script by calling the methods ,
+		we use this method driven automation Framework when we have many repetitive test cases.
+		Methods will avoid repetition of the steps and they will increase re-usability of the code.
+	3. Data Driven automation Framework
+		executing script by taking multiple input from the external source 
+		we use data driven automation Framework where the data is crucial
+	4. Module Driven automation Framework
+		executing script that belongs to specific module in order to perform regional regression testing
+		here we create package for each module of application and store script under the respective package
+	5. Keyword Driven automation Framework
+		process of executing keyword present in the keyword table.
+		In keyword driven , we use excel sheet where each sheet represents a test case
+		and each row in that sheet represents a test case step
+		During run time , framework will read each row of the sheet 
+		and convert into respective selenium script and execute
+	6. Hybrid automation Framework
+		Combination of any two or more of the above automation framework 
+		is called as hybrid framework.
+	
+	
+
+95) Explain your Framework?
+
+	1. The framework is developed using TestNG, POM(page object model) and Exel library. 
+		It is a combination of Data-Driven and Method-Driver framework, 
+		because of which we call it as Hybrid Framework.
+
+	2. The execution is controlled by TestNG suite file which has list of TestNG classes 
+		which are to be executed.
+
+	3. Each TestNG class has test method and also extends from BaseTest or SuperTest class
+		which has @BeforeSuite,  @BeforeMethod and @AfterMethod.
+
+	4. First @BeforeSuite is executed, which saves the previous Test-output folder 
+		to target folder Test-Report, before Test-output folder gets overrided after execution.
+		so that we can compare the reports.
+
+	5. Then @BeforeMethod is executed which opens the specific browser mentioned as a parameter in Testng xml
+		and it maximize() the browser, sets the implicit timeout and navigates to the url of the application.
+		It also sets the download path for the respective browser.
+		WebDriver driver=new FirefoxDriver();//new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.get(url);
+		
+	5. After executing Before Method,  it will start the execution of the respective test method. 
+		Test method performs action as per the manual test case steps 
+		by calling the approriate method present in Page Object Model classes.
+		The test method takes the data from excel sheet whenever required.
+		It calls the generic methods required to achieve scenario.
+	
+	6. After executing test method, it will execute @AfterMethod which closes all browser of webdriver instance.
+		driver.quit();
+
+	7. After executing all the scripts it will generate the result it html format 
+		in test-ouput folder. The important file will be emailable-report.html,
+		index.html, testng-failed.xml
+
+
+96) LIMITATIONS OF SELENIUM WEB DRIVER:
+	1. We can automate only web applications
+	2. We can’t minimize the browser
+	3. Using selenium we can’t perform any action on the browser which is already opened. 
+	Every time it will open the new browser.
+	4. We can take screenshot only in png format. Other format is not supported.
+	5. We can’t take screenshot of popup, multiple browsers and specific area.
+	6. We can’t specify the password in encrypted format.
+	7. We cannot handle file upload popup if it has attachment icon instead of Browse button.
+	8. We cannot handle file download popup in the browsers, need to use options or other tool
+	9. We cannot handle new tab in selenium.
+	10. We cannot handle window popup.
+
+97. EXCEPTIONS: -- we came across while using selenium
+	1. InterruptedException (Java checked)
+	2. IllegalStateException (Java Unchecked)
+	3. NoSuchElementException (Selenium Unchecked)
+	4. IOException (Java checked)
+	5. TimeoutException (Selenium Unchecked)
+	6. UnreachableBrowserException (Selenium Unchecked)
+	7. InvalidElementStateException (Selenium Unchecked) – when we try to enter data in a disabled textbox.
+	8. IndexOutOfBoundsException (Java Unchecked)
+	9. NumberFormatException (java Unchecked)
+	10. NoSuchFrameException (selenium unchecked)
+	11. UnexpectedTagNameException (selenium unchecked)
+	12. StaleElementReference Exception (selenium unchecked)
+	13. TestNGException (TestNG unchecked)
+	14. EncryptedDocumentException (Java unchecked)
+	15. Invalid FormatException (Java unchecked)
+	16. NoAlertPresentException (selenium unchecked)
+	17. SessionNotFoundException (Selenium unchked)
+	18. NoWindowException (Selenium Unchecked)
+
+98). Scenarios that cannot be automated using selenium
+	1. Image Verification
+	2. Css Validation (only few css attribute can be validated like color, font-size)
+	3. Captcha validation
+	4. Email validation
+	5. One Time Password Verification
+	6. SWF objects - (shockwave flex objects - means videos)
+	7. Session verification
+
+99). How to pick/select manual test cases for automation
+	1. check if the test case is executing manually or not
+		if the test case is not execting manually then don't pick the test case for automation
+	  we never do automation for failed test cases
+	2. check if the test case is automatable or not, 
+		if the test case contains anyt test case from list of 98 then we cannot automate
+
+100) Git commands used frequently
+	git clone gitUrl --- to download the repository
+	git pull --  ---    to pull the latest code from the repository to the local
+	git status - -      to check the status of local repository 
+	git add * ---       to add all the file from local changes
+	git add fileName -- to add a specific file
+	git commit -m "message" -- to commit local changes
+	git push --- to push the commited code to git repository

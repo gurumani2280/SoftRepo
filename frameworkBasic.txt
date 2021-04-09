@@ -1,0 +1,77 @@
+What is automation framework?
+	It is the standard rules, best practices , guidelines and folder structure 
+	which should be followed while automating the application testing, so that
+	conversion of manual test cases to automation script is done efficienlty.
+	We should follow the Automation Framework to have consistancy.
+
+what are the advantages of automation framework?
+	1. generate results automatically for each scenario
+	2. reduce scripting efforts
+	3. manage application changes easily
+	4. easy maintaince of automation scripts
+	5. managing dependencies automatically
+
+What are the types of Framework?
+	1. Linear automation Framework
+		creating automation script by record and playback 
+	2. Method or function Driven automation framework
+		developing script by calling the methods ,
+		we use this method driven automation Framework when we have many repetitive test cases.
+		Methods will avoid repetition of the steps and they will increase re-usability of the code.
+	3. Data Driven automation Framework
+		executing script by taking multiple input from the external source 
+		we use data driven automation Framework where the data is crucial
+	4. Module Driven automation Framework
+		executing script that belongs to specific module in order to perform regional regression testing
+		here we create package for each module of application and store script under the respective package
+	5. Keyword Driven automation Framework
+		process of executing keyword present in the keyword table.
+		In keyword driven , we use excel sheet where each sheet represents a test case
+		and each row in that sheet represents a test case step
+		During run time , framework will read each row of the sheet 
+		and convert into respective selenium script and execute
+	6. Hybrid automation Framework
+		Combination of any two or more of the above automation framework 
+		is called as hybrid framework.
+	
+	
+
+ Explain your Framework?
+
+	1. The framework is developed using Maven , TestNG, POM(page object model) and Exel library. 
+		It is a combination of Data-Driven and Method-Driver framework, 
+		because of which we call it as Hybrid Framework.
+
+	2. The execution is controlled by TestNG suite file which has list of TestNG classes 
+		which are to be executed.
+	   Testng xml is included in maven pom.xml using surefire plugin -
+	   - so that testng xml can be triggerred from maven 
+
+	3. Each TestNG class has test method and also extends from BaseTest or SuperTest class
+		which has @BeforeSuite,  @BeforeMethod and @AfterMethod.
+
+	4. First @BeforeSuite is executed, which saves the previous Test-output folder 
+		to target folder Test-Report, before Test-output folder gets overrided after execution.
+		so that we can compare the reports.
+
+	5. Then @BeforeMethod is executed which opens the specific browser mentioned as a parameter in Testng xml
+		and it maximize() the browser, sets the implicit timeout and navigates to the url of the application.
+		It also sets the download path for the respective browser.
+		WebDriver driver=new FirefoxDriver();//new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.get(url);
+		
+	5. After executing Before Method,  it will start the execution of the respective test method. 
+		Test method performs action as per the manual test case steps ---  
+		by calling the approriate method present in Page Object Model classes.
+		The test method takes the data from excel sheet whenever required.
+		It calls the generic methods required to achieve scenario.
+	
+	6. After executing test method, it will execute @AfterMethod which closes all browser of webdriver instance.
+		driver.quit(); 
+		it takes screenshot in case of failure
+
+	7. After executing all the scripts it will generate the result it html format 
+		in test-ouput folder. The important file will be emailable-report.html,
+		index.html, testng-failed.xml

@@ -1,0 +1,44 @@
+Roles and responsiblity
+
+Designing and implementing automation framework
+customising automation framework
+Selecting Manual test cases for automation
+Developing methods for repeating steps
+converting manual test cases into automation script
+Reviewing Automation Script
+Analysing result and reporting it
+writen xpath to identify webelements
+Executed test cases on different browsers
+Maintained Automation tracebility matrix (Mapping of manual test case and automation script)
+Contributed to framework libraries --(generic libraries) -- SwitchToWindows, etc
+
+
+Professional Summary
+Worked on Hybrid POM framework , with Maven , Testng. Used Git for repository
+Used apache POI for Data driven testing
+Xpath for Dynamic web element
+Oops concept (Inheritance, Polymorphism, Abstraction Encapsulation)--, Exception Handling, Collection etc
+
+Then Add manual points
+
+
+Resume Sequence
+
+NAme, Mobile email
+ objectives -- not mandatory
+ Professional and Executive Summary or synopsis
+ Tools and Technology
+ Experienc details -- like which company
+ Projects Experience with roles and responsiblity
+ Education detials
+ some personal details
+
+
+
+
+
+Tell Me about Yourself
+-
+Start with Project
+Then explain Framework used
+Then Components of Framework like maven, testng , POM and so on 

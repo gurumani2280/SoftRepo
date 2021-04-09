@@ -1,0 +1,19 @@
+Date Range:,"From Jun 01, 2020, Monday to Jun 30, 2020, Tuesday"
+Customers & Projects:,All projects of all customers (active and archived)
+Staff:,All Staff
+Time-track status:,Both approved and not approved time-track
+
+Customer,Project,Spent Time,HR & Finance,Production,Quality Control,Sales & Support,Top Management
+Big Bang Company,Flight operations,26.1667,2.3333,3.3333,0.0000,2.5000,18.0000
+Big Bang Company,Spaceship building,172.2500,0.0000,172.2500,0.0000,0.0000,0.0000
+Big Bang Company,Spaceship testing,179.0000,0.0000,0.0000,179.0000,0.0000,0.0000
+Galaxy Corporation,Android prototyping,215.5833,0.0000,158.5000,0.0000,8.9167,48.1667
+Galaxy Corporation,Android testing,27.5000,0.0000,0.0000,27.5000,0.0000,0.0000
+Joda Consulting Inc,Lightsaber Upgrade,79.7500,0.0000,55.3333,0.0000,0.0000,24.4167
+Our company,Accounting,138.0000,135.0000,0.0000,0.0000,0.0000,3.0000
+Our company,Management,260.0000,49.7500,0.0000,0.0000,45.6667,164.5833
+Our company,Recruiting & HR,63.2500,63.2500,0.0000,0.0000,0.0000,0.0000
+Our company,Sales,91.1667,0.0000,0.0000,0.0000,91.1667,0.0000
+Our company,Training,296.8333,9.7500,109.0000,88.6667,89.4167,0.0000
+
+Total Working Time:,,1549.5000,260.0833,498.4167,295.1667,237.6667,258.1667

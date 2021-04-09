@@ -1,0 +1,83 @@
+Q.How do you open the page without using get() method?
+Q.How do you refresh the page?
+Q.What is the difference between get() and navigate() method?
+Q.Write a script to open google.com and verify that title is Google and also verify that it is redirected to google.co.in
+//Q.SCRIPT TO EXPLAIN StaleElementReferenceException
+
+Q. What is the difference between ‘//a’ and ‘//table//a’?
+Q. What is the difference between //input and //div//input?
+Q. Derive an ‘xpath’ which matches with all the images present on the web page? img tag
+//img
+Q. Write an ‘xpath’ which matches with all the links and all the images present on the web page?  
+//a/img
+//a//img
+
+1: //tag [contains(@AttributeName,’AttributeValue’)]
+2: //tag [contains(text(), ‘textValue’)].
+
+Q. How do you handle if there is space between the strings ? text having leading and trailing spaces
+Q. When do we use contains function?
+
+Q.Write a code to print the value present in the text box? getAttribute("value")
+tooltip -- getAtrribute("title")
+Q.Write a code to romove the value present in the text box?  clear() /ctrl a +delete
+Q.Write a script to remove text present in the text box without using clear method?
+Q.Write a script to clear the text present in the text box by pressing back space?
+Q.Write a script to copy & paste the value present in one text box into another text box?
+Q.Write a script to print text of the link?  getText() -- getAtrribute("text")
+Q.Write a script to verify that email text box present in Facebook login page is empty?
+
+Q. Write a script to verify if a particular screen has loaded ?  getTitle()
+Q.Write a script to verify the status of the check box which is present in FaceBook login page? Note: IsSelected method is used to verify the checkbox or radio button is selected.
+Q.Write a script to verify whether login button is enabled or not which is present in the FB page?  isEnabled
+Q.Write a script to verify that logo of actitime is displayed on the login page?
+https://demo.actitime.com/login.do
+
+What are the different ways of clicking on a button?
+1. click()
+2. sendKeys()
+3. submit()//this works only if button code is submit
+
+Q.How do you get the font size of the text box? Or how do you get style property of an element? Ans: Using getCssValue()
+getCssValue("font-size");
+
+Q.Write a script to print background color of a textbox?
+getCssValue("color"));
+
+IMPORTANT METHODS OF WEBELEMENT INTERFACE
+i. 	clear()
+ii. 	click()
+iii. 	getAttribute()
+iv. 	getCssValue()
+vii. 	getText()
+viii. 	isDisplayed()
+ix. 	isEnabled()
+x. 	isSelected()
+xi. 	sendkeys()
+xii. 	submit()
+
+
+Multiple Elements
+Q. write a script to print total links on a page.
+Q. Write a script to print text of links present on the page. //text
+Q. Write a script to print all the url present on the page.(from anchor tag)// href
+Q. Write a script to count the no.of checkboxes present on the page.
+Q. Write a script to select all the check boxes present on the page from top to bottom
+
+Select drop down
+Q. Script to verify whether the dropdown is single select or mutliselect?
+Q. Write a script to count no.of options present in the dropdown?
+Q. Write a script to list down all the options present in the dropdown?
+Q. Write a script to search for specified option in the listbox?
+Q. Write a script to select all the options present in the dropdown and deselect all the option?
+
+
+Auto Suggestion -- google, makeMyTrip
+Q. Count the no.of auto suggestions when entering selenium in google
+Q. Print all the auto suggestions
+Q. Select one of them. say third one
+
+
+Q.Write a script to login to actitime application.
+Q: Print the title of the home page after login to the application.
+Q. Write a script to login and logout from the application 
