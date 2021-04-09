@@ -1,0 +1,68 @@
+ https://updates.jenkins-ci.org/download/war/
+
+ https://jenkins.io/download/
+
+ https://stackoverflow.com/questions/46404855/setting-up-jenkins-with-jenkins-war
+ https://stackoverflow.com/questions/15265277/how-to-start-jenkins-on-different-port-rather-than-8080-using-command-prompt-in
+	
+ https://stackoverflow.com/questions/34342207/jenkins-update-error-java-net-bindexception-address-already-in-use
+
+1. Jenkins Installation
+C:\Users\tester_android\Desktop\Jenkins>java -jar jenkins.war
+
+Caused by: java.net.BindException: Address already in use: bind
+
+C:\Users\tester_android\Desktop\Jenkins>java -jar jenkins.war --httpPort=6060
+
+ Jenkins is fully up and running
+
+2. launch jenkins url
+ http://localhost:6060/
+
+ C:\Users\tester_android\.jenkins\secrets
+
+For adding user or 
+Jenkin -- Manage Jenkins --> Manage Users --> 
+
+Enter credentials--
+ admin admin
+
+ https://stackoverflow.com/questions/46840692/default-credentials-for-jenkins-after-installation
+
+ https://testingbar.blogspot.com/p/jenkins-contents.html
+
+ add plugins
+
+
+3. Add plugins
+
+ Jenkin -- Manage Jenkins --> Manage Plugins-- Available plugin -- 
+
+ TestNG Result Plugin
+HTML Publisher plugin
+
+Publish TestNg Result --- in Post -BUild Actions of the COnfigure
+
+And also Publish HTML report
+
+4. add global variables like jdk home, mvn home
+
+Manage jenkins-> Global Tool Configuration
+
+5. configure project to run periodically 
+BuildTriggers->Build Periodically
+
+*/2 * * * *
+
+https://stackoverflow.com/questions/12472645/how-do-i-schedule-jobs-in-jenkins
+
+6. adding parameter
+
+This project is parameterised
+add parameter
+
+${suiteXmlFile}
+
+clean test -DsuiteXmlFile
+
+clean test -DsuiteXmlFile=$testngxml
