@@ -1,0 +1,40 @@
+Collection:- 
+0. how to create collection  --- 
+1. Storing data into collection  -- add(), add(2, 68)
+2. retrievig data from collection  
+
+different type of collection 
+
+		 1. List      2. Queue		3. Set
+index based	yes		Not		NOt 
+		get(index)
+insertion order maintained      not maintained -- Not maintained *
+Autosorted ---- not		yes		*
+duplicates     allowed		Allowed ----	Not Allowed
+null values    allowed          (Not) Allowed*  allowed (*) 
+
+
+
+
+
+
+difference between	 arrays and collection
+1. size	-----		fixed			---- dynamic
+2. data type --		homogeneous		- hetergeneous
+3. built in functionality -- less		--- more   --- contains()
+4. data stored  -- primitive and non primitive --- only objects 
+
+
+
+ 1. List	2. Queue	3. Set  --- interfaces
+ Arraylist	priorityQueue   Hashset    --- only duplicates not allowed
+ Linked list   Linked list      LinkedHashset -- insertion order maintained
+				TreeSet  -- Autosorted
+
+
+
+Map  --- separate implementation  - key value pair
+
+HashMap, 
+LinkedHashMap
+TreeMap
